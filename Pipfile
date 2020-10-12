@@ -10,6 +10,7 @@ pytest = "*"
 opencv-contrib-python = "*"
 numpy = "*"
 flask = "*"
+tensorflow = "*"
 
 [requires]
 python_version = "3.8"

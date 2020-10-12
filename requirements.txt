@@ -1,3 +1,6 @@
-pytest==6.1.1
-opencv-contrib-python==latest
-numpy==latest
+numpy~=1.18.5
+six~=1.15.0
+tensorflow~=2.3.1
+matplotlib~=3.3.2
+Pillow~=7.2.0
+ipython~=7.18.1
