@@ -27,7 +27,7 @@ Copyright :copyright: 2020 Florian Drinkler, Luca Stanger
 ## Citation
 If you find this code useful in your research, please consider citing:
 ### BibTeX
-    @online{plummerCITE2018,
+    @online{trafficAnalysis2021,
         title        = {Traffic Analysis using Machine Learning Networks},
         author       = {Luca Stanger and Florian Drinkler},
         year         = {2021},
