@@ -8,6 +8,7 @@
 ![GitHub issues](https://img.shields.io/github/issues/lucastanger/traffic-analysis)
 ![GitHub code size in bytes](https://img.shields.io/github/languages/code-size/lucastanger/traffic-analysis)
 ![Lines of code](https://img.shields.io/tokei/lines/github/lucastanger/traffic-analysis)
+![Gitter](https://img.shields.io/gitter/room/lucastanger/trafficanalysis)
 
 ## About
 
