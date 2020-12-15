@@ -4,3 +4,5 @@
 *.tex linguist-vendored=false
 *.Makefile linguist-vendored=false
 *.bib linguist-vendored=false
+
+documentation/* -linguist-documentation
