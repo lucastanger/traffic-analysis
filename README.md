@@ -30,7 +30,7 @@ If you find this code useful in your research, please consider citing:
     @online{plummerCITE2018,
         title        = {Traffic Analysis using Machine Learning Networks},
         author       = {Luca Stanger and Florian Drinkler},
-        year         = 2021,
+        year         = {2021},
         journal      = {GitHub repository},
         publisher    = {GitHub},
         url          = {https://github.com/lucastanger/traffic-analysis}
