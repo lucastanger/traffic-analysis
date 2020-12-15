@@ -1,0 +1,6 @@
+* linguist-vendored
+*.ipynb linguist-vendored=false
+*.py linguist-vendored=false
+*.tex linguist-vendored=false
+*.Makefile linguist-vendored=false
+*.bib linguist-vendored=false
