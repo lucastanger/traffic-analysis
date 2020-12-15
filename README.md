@@ -24,6 +24,17 @@
 
 Copyright :copyright: 2020 Florian Drinkler, Luca Stanger
 
+## Found something? Cite this repository!
+
+    @online{plummerCITE2018,
+      Author = {Luca Stanger and Florian Drinkler},
+      Title = {Traffic Analysis using Machine Learning Networks},
+      Year = {2021},
+      publisher = {GitHub},
+      journal = {GitHub repository},
+      url = {https://github.com/lucastanger/traffic-analysis}
+    }
+
 # License :page_facing_up:
 
 This project is licensed under the **MIT License** - see the [LICENSE.MD](https://github.com/lucastanger/traffic-analysis/blob/main/LICENSE) file for details
