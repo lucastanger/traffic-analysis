@@ -24,16 +24,21 @@
 
 Copyright :copyright: 2020 Florian Drinkler, Luca Stanger
 
-## Found something? Cite this repository!
-
+## Citation
+If you find this code useful in your research, please consider citing:
+### BibTeX
     @online{plummerCITE2018,
-      Author = {Luca Stanger and Florian Drinkler},
-      Title = {Traffic Analysis using Machine Learning Networks},
-      Year = {2021},
-      publisher = {GitHub},
-      journal = {GitHub repository},
-      url = {https://github.com/lucastanger/traffic-analysis}
+        title        = {Traffic Analysis using Machine Learning Networks},
+        author       = {Luca Stanger and Florian Drinkler},
+        year         = 2021,
+        journal      = {GitHub repository},
+        publisher    = {GitHub},
+        url          = {https://github.com/lucastanger/traffic-analysis}
     }
+### APA
+
+    (Stanger, L and Drinkler, F , 2021). Traffic Analysis Using Machine Learning Networks. GitHub.
+    https://github.com/lucastanger/traffic-analysis.
 
 # License :page_facing_up:
 
