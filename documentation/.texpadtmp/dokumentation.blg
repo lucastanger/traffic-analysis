@@ -1,0 +1,9 @@
+[0] Config.pm:304> INFO - This is Biber 2.14
+[0] Config.pm:307> INFO - Logfile is '/Users/lucastanger/Documents/GitHub/traffic-analysis/documentation/.texpadtmp/dokumentation.blg'
+[81] biber-darwin:322> INFO - === Sat Dec 19, 2020, 00:36:08
+[94] Biber.pm:415> INFO - Reading '/Users/lucastanger/Documents/GitHub/traffic-analysis/documentation/.texpadtmp/dokumentation.bcf'
+[182] Biber.pm:943> INFO - Found 0 citekeys in bib section 0
+[187] Utils.pm:304> WARN - The file '/Users/lucastanger/Documents/GitHub/traffic-analysis/documentation/.texpadtmp/dokumentation.bcf' does not contain any citations!
+[195] bbl.pm:652> INFO - Writing '/Users/lucastanger/Documents/GitHub/traffic-analysis/documentation/.texpadtmp/dokumentation.bbl' with encoding 'UTF-8'
+[195] bbl.pm:755> INFO - Output to /Users/lucastanger/Documents/GitHub/traffic-analysis/documentation/.texpadtmp/dokumentation.bbl
+[195] Biber.pm:128> INFO - WARNINGS: 1
