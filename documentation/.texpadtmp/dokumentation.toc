@@ -21,68 +21,76 @@
 \defcounter {refsection}{0}\relax 
 \contentsline {section}{\numberline {2.1}Implementierungsumgebung Jupyter}{2}{section.2.1}%
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {2.2}Bildverarbeitungsalgorithmen mit OpenCV}{2}{section.2.2}%
+\contentsline {section}{\numberline {2.2}Bildverarbeitungsalgorithmen mit OpenCV}{3}{section.2.2}%
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {2.3}Maschinelle Lernverfahren}{2}{section.2.3}%
+\contentsline {section}{\numberline {2.3}Maschinelle Lernverfahren}{3}{section.2.3}%
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {2.3.1}Supervised Learning}{2}{subsection.2.3.1}%
+\contentsline {subsection}{\numberline {2.3.1}Supervised Learning}{3}{subsection.2.3.1}%
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {2.3.2}Unsupervised Learning}{2}{subsection.2.3.2}%
+\contentsline {subsection}{\numberline {2.3.2}Unsupervised Learning}{3}{subsection.2.3.2}%
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {2.3.3}Reinforcement Learning}{2}{subsection.2.3.3}%
+\contentsline {subsection}{\numberline {2.3.3}Reinforcement Learning}{3}{subsection.2.3.3}%
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {2.4}Datenstromorientierte Programmierung mit TensorFlow}{2}{section.2.4}%
+\contentsline {section}{\numberline {2.4}Datenstromorientierte Programmierung mit TensorFlow}{3}{section.2.4}%
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {2.5}Deep Learning mit Keras}{2}{section.2.5}%
+\contentsline {subsection}{\numberline {2.4.1}Künstliche neuronale Netze}{3}{subsection.2.4.1}%
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {2.6}Verwandte Arbeiten}{2}{section.2.6}%
+\contentsline {subsection}{\numberline {2.4.2}Convolutional Neural Networks}{4}{subsection.2.4.2}%
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{\numberline {3}Analyse der Datenströme}{3}{chapter.3}%
+\contentsline {section}{\numberline {2.5}Deep Learning mit Keras}{6}{section.2.5}%
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {3.1}Anforderungen an die Analyse}{3}{section.3.1}%
+\contentsline {section}{\numberline {2.6}Verwandte Arbeiten}{6}{section.2.6}%
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {3.2}Datenaufbereitung}{3}{section.3.2}%
+\contentsline {chapter}{\numberline {3}Analyse der Datenströme}{7}{chapter.3}%
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {3.2.1}Datenerhebung und Integration}{3}{subsection.3.2.1}%
+\contentsline {section}{\numberline {3.1}Anforderungen an die Analyse}{7}{section.3.1}%
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {3.2.2}Datenberechnung}{3}{subsection.3.2.2}%
+\contentsline {section}{\numberline {3.2}Datenaufbereitung}{7}{section.3.2}%
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {3.2.3}Datenaggregation}{3}{subsection.3.2.3}%
+\contentsline {subsection}{\numberline {3.2.1}Datenerhebung und Integration}{7}{subsection.3.2.1}%
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {3.2.4}Datenbereinigung}{3}{subsection.3.2.4}%
+\contentsline {subsection}{\numberline {3.2.2}Datenberechnung}{7}{subsection.3.2.2}%
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{\numberline {4}Entwicklung des Modells}{4}{chapter.4}%
+\contentsline {subsection}{\numberline {3.2.3}Datenaggregation}{7}{subsection.3.2.3}%
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {4.1}Vorverarbeitung der Daten}{4}{section.4.1}%
+\contentsline {subsection}{\numberline {3.2.4}Datenbereinigung}{7}{subsection.3.2.4}%
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {4.2}Entwurf eines Netzwerks zur Klassifikation von Objekten}{4}{section.4.2}%
+\contentsline {chapter}{\numberline {4}Entwicklung des Modells}{8}{chapter.4}%
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {4.4}Erheben einer Verkehrsstatistik}{4}{section.4.4}%
+\contentsline {section}{\numberline {4.1}Vorverarbeitung der Daten}{8}{section.4.1}%
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {4.5}Statistische Bewertung des Modells}{4}{section.4.5}%
+\contentsline {section}{\numberline {4.2}Entwurf eines Netzwerks zur Klassifikation von Objekten}{8}{section.4.2}%
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {4.5.1}Determination aussagekräftiger Metriken}{4}{subsection.4.5.1}%
+\contentsline {section}{\numberline {4.4}Erheben einer Verkehrsstatistik}{8}{section.4.4}%
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{\numberline {5}Prototypische Implementierung}{5}{chapter.5}%
+\contentsline {section}{\numberline {4.5}Statistische Bewertung des Modells}{8}{section.4.5}%
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {5.1}Aufbau des Prototypen}{5}{section.5.1}%
+\contentsline {subsection}{\numberline {4.5.1}Determination aussagekräftiger Metriken}{8}{subsection.4.5.1}%
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {5.2}Modellierung}{5}{section.5.2}%
+\contentsline {chapter}{\numberline {5}Prototypische Implementierung}{9}{chapter.5}%
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {5.3}Deployment}{5}{section.5.3}%
+\contentsline {section}{\numberline {5.1}Aufbau des Prototypen}{9}{section.5.1}%
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {5.4}Anpassbarkeit}{5}{section.5.4}%
+\contentsline {section}{\numberline {5.2}Modellierung}{9}{section.5.2}%
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{\numberline {6}Evaluation des Prototypen}{6}{chapter.6}%
+\contentsline {section}{\numberline {5.3}Deployment}{9}{section.5.3}%
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {6.1}Metriken zur Bewertung der Klassifikation}{6}{section.6.1}%
+\contentsline {section}{\numberline {5.4}Anpassbarkeit}{9}{section.5.4}%
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {6.2}Optimierung des neuronalen Netzes}{6}{section.6.2}%
+\contentsline {chapter}{\numberline {6}Evaluation des Prototypen}{10}{chapter.6}%
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {6.3}Evaluierung der Ergebnisse}{6}{section.6.3}%
+\contentsline {section}{\numberline {6.1}Metriken zur Bewertung der Klassifikation}{10}{section.6.1}%
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{\numberline {7}Abschluss}{7}{chapter.7}%
+\contentsline {section}{\numberline {6.2}Optimierung des neuronalen Netzes}{10}{section.6.2}%
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {7.1}Fazit}{7}{section.7.1}%
+\contentsline {section}{\numberline {6.3}Evaluierung der Ergebnisse}{10}{section.6.3}%
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {7.2}Ausblick}{7}{section.7.2}%
+\contentsline {chapter}{\numberline {7}Abschluss}{11}{chapter.7}%
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {7.1}Fazit}{11}{section.7.1}%
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {7.2}Ausblick}{11}{section.7.2}%
+\defcounter {refsection}{0}\relax 
+\contentsline {chapter}{\nonumberline Literatur}{12}{chapter*.13}%
+\defcounter {refsection}{0}\relax 
+\contentsline {chapter}{Glossar}{14}{section*.14}%

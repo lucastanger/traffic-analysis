@@ -2182,6 +2182,24 @@
     <bcf:datasource type="file" datatype="bibtex">bibliographie.bib</bcf:datasource>
   </bcf:bibdata>
   <bcf:section number="0">
+    <bcf:citekey order="1">project_jupyter</bcf:citekey>
+    <bcf:citekey order="2">jupyter_kernel</bcf:citekey>
+    <bcf:citekey order="3">colab_notebooks</bcf:citekey>
+    <bcf:citekey order="4">mcculloch_pitts</bcf:citekey>
+    <bcf:citekey order="5">mcculloch_pitts</bcf:citekey>
+    <bcf:citekey order="6">mcculloch_pitts</bcf:citekey>
+    <bcf:citekey order="7">Mainzer1997</bcf:citekey>
+    <bcf:citekey order="8">stutz_neural_networks</bcf:citekey>
+    <bcf:citekey order="9">stutz_neural_networks</bcf:citekey>
+    <bcf:citekey order="10">Wang2003</bcf:citekey>
+    <bcf:citekey order="11">Networks1995</bcf:citekey>
+    <bcf:citekey order="12">Networks1995</bcf:citekey>
+    <bcf:citekey order="13">imagenet</bcf:citekey>
+    <bcf:citekey order="14">NIPS2012_c399862d</bcf:citekey>
+    <bcf:citekey order="14">rastegari2016xnornet</bcf:citekey>
+    <bcf:citekey order="14">russakovsky2015imagenet</bcf:citekey>
+    <bcf:citekey order="15">russakovsky2015imagenet</bcf:citekey>
+    <bcf:citekey order="16">Yan2020</bcf:citekey>
   </bcf:section>
   <!-- SORTING TEMPLATES -->
   <bcf:sortingtemplate name="nty">
