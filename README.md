@@ -44,7 +44,7 @@ If you find this code useful in your research, please consider citing:
         title        = {Traffic Analysis using Machine Learning Networks},
         author       = {Luca Stanger and Florian Drinkler},
         year         = {2021},
-        publisher      = {DHBW Stuttgart},
+        publisher    = {DHBW Stuttgart},
         url          = {https://github.com/lucastanger/traffic-analysis}
     }
 ### APA
