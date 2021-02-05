@@ -40,7 +40,7 @@
     </bcf:option>
     <bcf:option type="singlevalued">
       <bcf:key>labelalpha</bcf:key>
-      <bcf:value>0</bcf:value>
+      <bcf:value>1</bcf:value>
     </bcf:option>
     <bcf:option type="multivalued">
       <bcf:key>labelnamespec</bcf:key>
@@ -163,7 +163,7 @@
     </bcf:option>
     <bcf:option type="singlevalued">
       <bcf:key>sortingtemplatename</bcf:key>
-      <bcf:value>nty</bcf:value>
+      <bcf:value>anyt</bcf:value>
     </bcf:option>
     <bcf:option type="singlevalued">
       <bcf:key>sortsets</bcf:key>
@@ -2185,31 +2185,49 @@
     <bcf:citekey order="1">project_jupyter</bcf:citekey>
     <bcf:citekey order="2">jupyter_kernel</bcf:citekey>
     <bcf:citekey order="3">colab_notebooks</bcf:citekey>
-    <bcf:citekey order="4">mcculloch_pitts</bcf:citekey>
-    <bcf:citekey order="5">mcculloch_pitts</bcf:citekey>
-    <bcf:citekey order="6">mcculloch_pitts</bcf:citekey>
-    <bcf:citekey order="7">Mainzer1997</bcf:citekey>
-    <bcf:citekey order="8">stutz_neural_networks</bcf:citekey>
-    <bcf:citekey order="9">stutz_neural_networks</bcf:citekey>
-    <bcf:citekey order="10">Wang2003</bcf:citekey>
-    <bcf:citekey order="11">Networks1995</bcf:citekey>
-    <bcf:citekey order="12">Networks1995</bcf:citekey>
-    <bcf:citekey order="13">imagenet</bcf:citekey>
-    <bcf:citekey order="14">NIPS2012_c399862d</bcf:citekey>
-    <bcf:citekey order="14">rastegari2016xnornet</bcf:citekey>
-    <bcf:citekey order="14">russakovsky2015imagenet</bcf:citekey>
-    <bcf:citekey order="15">russakovsky2015imagenet</bcf:citekey>
-    <bcf:citekey order="16">Yan2020</bcf:citekey>
+    <bcf:citekey order="4">Sejnowski1999</bcf:citekey>
+    <bcf:citekey order="5">Sejnowski1999</bcf:citekey>
+    <bcf:citekey order="6">Sejnowski1999</bcf:citekey>
+    <bcf:citekey order="7">duda1973pattern</bcf:citekey>
+    <bcf:citekey order="8">duda1973pattern</bcf:citekey>
+    <bcf:citekey order="9">Cord2008</bcf:citekey>
+    <bcf:citekey order="10">Cord2008</bcf:citekey>
+    <bcf:citekey order="11">Cord2008</bcf:citekey>
+    <bcf:citekey order="12">Cord2008</bcf:citekey>
+    <bcf:citekey order="13">Cord2008</bcf:citekey>
+    <bcf:citekey order="14">Cord2008</bcf:citekey>
+    <bcf:citekey order="15">Cord2008</bcf:citekey>
+    <bcf:citekey order="16">pmlr-v81-menon18a</bcf:citekey>
+    <bcf:citekey order="17">pmlr-v81-menon18a</bcf:citekey>
+    <bcf:citekey order="18">rubinstein2014cross</bcf:citekey>
+    <bcf:citekey order="19">mcculloch_pitts</bcf:citekey>
+    <bcf:citekey order="20">mcculloch_pitts</bcf:citekey>
+    <bcf:citekey order="21">mcculloch_pitts</bcf:citekey>
+    <bcf:citekey order="22">Mainzer1997</bcf:citekey>
+    <bcf:citekey order="23">stutz_neural_networks</bcf:citekey>
+    <bcf:citekey order="24">stutz_neural_networks</bcf:citekey>
+    <bcf:citekey order="25">Wang2003</bcf:citekey>
+    <bcf:citekey order="26">Networks1995</bcf:citekey>
+    <bcf:citekey order="27">Networks1995</bcf:citekey>
+    <bcf:citekey order="28">imagenet</bcf:citekey>
+    <bcf:citekey order="29">NIPS2012_c399862d</bcf:citekey>
+    <bcf:citekey order="29">rastegari2016xnornet</bcf:citekey>
+    <bcf:citekey order="29">russakovsky2015imagenet</bcf:citekey>
+    <bcf:citekey order="30">russakovsky2015imagenet</bcf:citekey>
+    <bcf:citekey order="31">Yan2020</bcf:citekey>
   </bcf:section>
   <!-- SORTING TEMPLATES -->
-  <bcf:sortingtemplate name="nty">
+  <bcf:sortingtemplate name="anyt">
     <bcf:sort order="1">
       <bcf:sortitem order="1">presort</bcf:sortitem>
     </bcf:sort>
-    <bcf:sort order="2" final="1">
+    <bcf:sort order="2">
+      <bcf:sortitem order="1">labelalpha</bcf:sortitem>
+    </bcf:sort>
+    <bcf:sort order="3" final="1">
       <bcf:sortitem order="1">sortkey</bcf:sortitem>
     </bcf:sort>
-    <bcf:sort order="3">
+    <bcf:sort order="4">
       <bcf:sortitem order="1">sortname</bcf:sortitem>
       <bcf:sortitem order="2">author</bcf:sortitem>
       <bcf:sortitem order="3">editor</bcf:sortitem>
@@ -2217,24 +2235,24 @@
       <bcf:sortitem order="5">sorttitle</bcf:sortitem>
       <bcf:sortitem order="6">title</bcf:sortitem>
     </bcf:sort>
-    <bcf:sort order="4">
-      <bcf:sortitem order="1">sorttitle</bcf:sortitem>
-      <bcf:sortitem order="2">title</bcf:sortitem>
-    </bcf:sort>
     <bcf:sort order="5">
       <bcf:sortitem order="1">sortyear</bcf:sortitem>
       <bcf:sortitem order="2">year</bcf:sortitem>
     </bcf:sort>
     <bcf:sort order="6">
+      <bcf:sortitem order="1">sorttitle</bcf:sortitem>
+      <bcf:sortitem order="2">title</bcf:sortitem>
+    </bcf:sort>
+    <bcf:sort order="7">
       <bcf:sortitem order="1">volume</bcf:sortitem>
       <bcf:sortitem literal="1" order="2">0</bcf:sortitem>
     </bcf:sort>
   </bcf:sortingtemplate>
   <!-- DATALISTS -->
   <bcf:datalist section="0"
-                name="nty/global//global/global"
+                name="anyt/global//global/global"
                 type="entry"
-                sortingtemplatename="nty"
+                sortingtemplatename="anyt"
                 sortingnamekeytemplatename="global"
                 labelprefix=""
                 uniquenametemplatename="global"

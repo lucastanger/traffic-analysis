@@ -4,25 +4,103 @@
 %https://www-ai.cs.tu-dortmund.de/PublicPublicationFiles/bierwirth_2018a.pdf
 
 \section{Implementierungsumgebung Jupyter}
+\par
 Jupyter Notebooks ist eine von der non-profit Organisation Project Jupyter entwickelte Open-Source Lösung zur interaktiven Arbeit mit Dutzenden Programmiersprachen \cite{project_jupyter}. Der Name Jupyter leitet sich dabei von den drei primären Programmiersprachen Julia, Python und R ab. Jupyter Notebooks ist sprachunabhängig und unterstützt, unter Verwendung des IPython \gls{Kernel}, die Programmiersprachen Julia, R, Haskell, Ruby und Python \cite{jupyter_kernel}. Darüber hinaus werden unterschiedlichste Export Möglichkeiten wie \ac{HTML}, \ac{PDF} und \LaTeX \space unterstützt. Die in diesem Projekt verwendete Variante von Jupyter Notebooks ist Google Colab, eine speziell für die Python-Entwicklung entworfene Umgebung. Colab Notebooks führen Code auf Cloud-Servern aus und bieten somit unabhängige Vorteile gehosteter Hardware, wie \acp{GPU} und \acp{TPU} \cite{colab_notebooks}.
 
 \section{Bildverarbeitungsalgorithmen mit OpenCV}
 
 \section{Maschinelle Lernverfahren}
 
-\subsection{Supervised Learning}
+Maschinelle Lernverfahren lassen sich in drei Bereiche unterteilen. \citeauthor{Sejnowski1999} beschreibt in seinem Buch \citetitle{Sejnowski1999} das Unüberwachte Lernen \emph{(unsupervised learning)} als maschinelles Lernverfahren, das ohne zuvor bekannte Werte oder Belohnungen, Abweichungen vom strukturlosen Rauschen erkennt \cite{Sejnowski1999}. Ferner wird von \citeauthor{duda1973pattern} die automatische Segmentierung (Clustering) und die Komprimierung von Daten zur Dimensionsreduktion erwähnt, die zum fortwährenden Erfolg der Lernmethode beitragen \cites[51\psq]{duda1973pattern}[51\psq]{Cord2008}. Als eine weitere maschinelle Lernmethode führt \citeauthor{Cord2008} das Überwachte Lernen \emph{(supervised learning)} an. Das Überwachte Lernen beinhaltet das Lernen einer Abbildung zwischen einem Satz von Eingangsvariablen $X$ und einer Ausgangsvariablen $Y$, sowie die Anwendung dieser Abbildung zur Vorhersage der Ausgabe für ungesehene Daten \cite[21\psqq]{Cord2008}. \citeauthor{Cord2008} nennt \citeyear{Cord2008} als verbreitestes Modell die \ac{SVM}, die ihre Stärken besonders in der Verarbeitung von Multimedialen Daten besitzt. Im Paradigma des überwachten Lernens besteht das Ziel darin, eine Funktion $f:X \longrightarrow Y$ aus einem Beispiel- oder Trainingssatz $A_{n}$ abzuleiten \cite[22]{Cord2008}. Sei hierzu $x_i \in X$ und $y_i \in Y$:
 
-\subsection{Unsupervised Learning}
+\begin{equation}
+	A_{n} = ((x_{1},y_{1}),\dots,(x_{n},y_{n})) \in (X \times Y)^{n}.
+\end{equation}
 
-\subsection{Reinforcement Learning}
+Ein weiterer Fundamentaler Bestandteil des überwachten Lernens ist der Begriff des Verlusts zur Messung der Übereinstimmung zwischen der Vorhersage $f(x)$ und der gewünschten Ausgabe $y$. Hierfür wird eine Verlustfunktion $L:Y \times Y \longrightarrow \mathbb{R}^+$ zur Evaluierung des Fehlers eingeführt. Die Wahl der Verlustfunktion $L(f(x),y)$ hängt von dem zu lösenden Lernproblem ab \cite[22]{Cord2008}. 
+
+Zu unterscheiden sind hierbei drei verschiedenen Arten - \emph{Binäre}, \emph{Multi-Class} sowie \emph{Multi-Label} Klassifikation. Für erstere ist es das Ziel, die Ausgabe eines messbaren zufälligen Klassifikators, parametrisiert durch $f:X\rightarrow [0,1]$, der zwischen positiven $(Y=1)$ und negativen $(Y=0)$ Instanzen unterscheidet, zu erzeugen \cite[2\psq]{pmlr-v81-menon18a}. Ein zufälliger Klassifikator sagt jedes $x \in X$ mit der Wahrscheinlichkeit $f(x)$ als positiv voraus; die Qualität eines solchen Klassifikators wird durch ein statistisches Risiko $R(\cdot;D): [0,1]^X \rightarrow \mathbb{R}_{+} $ bewertet \cite[3]{pmlr-v81-menon18a}. Die standardmäßig gewählte Verlustfunktion $L(f(x),y)$ für Binäre Klassifikation ist die Binäre Kreuzentropie (\emph{binary cross entropy}), definiert als
+
+\begin{equation}
+	CE = - \sum_{i=1}^{C'=2}{t_i \log(s_i) = -t_1 \log(s_1) - (1-t_1} \log(1-s_1).
+\end{equation}
+
+Es wird von zwei Klassen $C_1$ und $C_2$ ausgegangen. $t_1 \in [0,1]$ und $s_1$ sind die Grundwahrheit und der Wert für $C_1$; $t_2 = 1 - t_1$ sowie $s_2 = 1 - t_2$ für $C_2$ \cite{rubinstein2014cross}.
+
+
+%Weiterführend wird hierauf in Kapitel \ref{sec:optimize} eingegangen.
+
+\newpage
+\subsection{Optimierungsverfahren für maschinelle Lernmethoden}\label{sec:optimize}
+
+
+\begin{figure}[ht]
+	\centering
+\tikzset{arrowed/.style={decorate,
+decoration={show path construction, 
+moveto code={},
+lineto code={
+\draw[#1] (\tikzinputsegmentfirst) --  (\tikzinputsegmentlast);
+},
+curveto code={},
+closepath code={},
+}},arrowed/.default={-stealth}}
+
+\pgfplotsset{gradient function/.initial=f,
+dx/.initial=0.01,dy/.initial=0.01}
+\pgfmathdeclarefunction{xgrad}{2}{%
+\begingroup%
+\pgfkeys{/pgf/fpu,/pgf/fpu/output format=fixed}%
+\edef\myfun{\pgfkeysvalueof{/pgfplots/gradient function}}%
+\pgfmathparse{(\myfun(#1+\pgfkeysvalueof{/pgfplots/dx},#2)%
+-\myfun(#1,#2))/\pgfkeysvalueof{/pgfplots/dx}}%
+ % \pgfmathsetmacro{\mysum}{\mysum+\myfun(\value{isum},#2)}%
+\pgfmathsmuggle\pgfmathresult\endgroup%
+}%
+\pgfmathdeclarefunction{ygrad}{2}{%
+\begingroup%
+\pgfkeys{/pgf/fpu,/pgf/fpu/output format=fixed}%
+\edef\myfun{\pgfkeysvalueof{/pgfplots/gradient function}}%
+\pgfmathparse{(\myfun(#1,#2+\pgfkeysvalueof{/pgfplots/dy})%
+-\myfun(#1,#2))/\pgfkeysvalueof{/pgfplots/dy}}%
+ % \pgfmathsetmacro{\mysum}{\mysum+\myfun(\value{isum},#2)}%
+\pgfmathsmuggle\pgfmathresult\endgroup%
+}%
+
+\pgfplotsset{compat=1.17}
+
+\begin{tikzpicture}
+\begin{axis}[width=12cm,%
+    declare function={f(\x,\y)=cos(deg(\x)*0.8)*cos(deg(\y)*0.6)*exp(0.1*\x);}]
+ \addplot3[surf,shader=interp,domain=-4:3,%samples=81
+ ]{f(x,y)};
+ \edef\myx{1} % first x coordinate
+ \edef\myy{0.25} % first y coordinate
+ \edef\mystep{-0.25}% negative values mean descending
+ \pgfmathsetmacro{\myf}{f(\myx,\myy)}
+ \edef\lstCoords{(\myx,\myy,\myf)}
+ \pgfplotsforeachungrouped\X in{0,...,5}
+ {
+ \pgfmathsetmacro{\mydx}{xgrad(\myx,\myy)}
+ \pgfmathsetmacro{\mydy}{ygrad(\myx,\myy)}
+ \pgfmathsetmacro{\myscale}{\mystep/sqrt(\mydx*\mydx+\mydy*\mydy)}
+ \pgfmathsetmacro{\myx}{\myx+\myscale*\mydx}
+ \pgfmathsetmacro{\myy}{\myy+\myscale*\mydy} 
+ \pgfmathsetmacro{\myf}{f(\myx,\myy)}
+ \edef\lstCoords{\lstCoords\space (\myx,\myy,\myf)}
+ }
+ \addplot3[samples y=0,arrowed] coordinates \lstCoords;
+\end{axis}
+\end{tikzpicture}
+\end{figure}
 
 \section{Datenstromorientierte Programmierung mit TensorFlow}
 
+
+\newpage
 \subsection{Künstliche neuronale Netze}
 
-Die Ursprünge der künstlichen neuronalen Netze lassen sich auf \citeauthor{mcculloch_pitts} im Jahre \citeyear{mcculloch_pitts} zurückführen \cite{mcculloch_pitts}. Eine von Donald O. Hebb 1949 formulierte Lernregel stellt seither in ihrer allgemeinen Form die Grundlage der künstlichen neuronalen Lernverfahren dar \cite{Mainzer1997}.
-
-Ein künstliches neuronales Netz besteht aus einer Eingabeschicht von Neuronen, $1..n$ versteckter Schichten und einer letzten Schicht von Ausgangsneuronen. Ein einzelnes Neuron nimmt überlicherweise mehrere Werte $x_{1},...,x_{n}$ und einen \gls{Bias}-Term $w_{0}$ als Eingabe und berechnet daraus die Ausgabe $y=h(z)$.
+Die Ursprünge der künstlichen neuronalen Netze lassen sich auf \citeauthor{mcculloch_pitts} im Jahre \citeyear{mcculloch_pitts} zurückführen \cite{mcculloch_pitts}. Eine von Donald O. Hebb 1949 formulierte Lernregel stellt seither in ihrer allgemeinen Form die Grundlage der künstlichen neuronalen Lernverfahren dar \cite{Mainzer1997}. Ein künstliches neuronales Netz besteht aus einer Eingabeschicht von Neuronen, $1..n$ versteckter Schichten und einer letzten Schicht von Ausgangsneuronen. Ein einzelnes Neuron nimmt überlicherweise mehrere Werte $x_{1},...,x_{n}$ und einen \gls{Bias}-Term $w_{0}$ als Eingabe und berechnet daraus die Ausgabe $y=h(z)$.
 
 \begin{figure}[ht]
 	\centering
