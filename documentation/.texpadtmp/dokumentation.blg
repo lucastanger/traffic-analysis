@@ -1,19 +1,19 @@
 [0] Config.pm:304> INFO - This is Biber 2.14
 [0] Config.pm:307> INFO - Logfile is '/Users/lucastanger/Documents/GitHub/traffic-analysis/documentation/.texpadtmp/dokumentation.blg'
-[85] biber-darwin:322> INFO - === Sat Feb  6, 2021, 13:11:34
-[103] Biber.pm:415> INFO - Reading '/Users/lucastanger/Documents/GitHub/traffic-analysis/documentation/.texpadtmp/dokumentation.bcf'
-[194] Biber.pm:943> INFO - Found 18 citekeys in bib section 0
-[206] Biber.pm:4256> INFO - Processing section 0
-[207] Utils.pm:75> INFO - Globbing data source ''/Users/lucastanger/Documents/GitHub/traffic-analysis/documentation/bibliographie.bib''
-[207] Utils.pm:91> INFO - Globbed data source ''/Users/lucastanger/Documents/GitHub/traffic-analysis/documentation/bibliographie.bib'' to /Users/lucastanger/Documents/GitHub/traffic-analysis/documentation/bibliographie.bib
-[217] Biber.pm:4455> INFO - Looking for bibtex format file '/Users/lucastanger/Documents/GitHub/traffic-analysis/documentation/bibliographie.bib' for section 0
-[218] bibtex.pm:1653> INFO - LaTeX decoding ...
-[243] bibtex.pm:1471> INFO - Found BibTeX data source '/Users/lucastanger/Documents/GitHub/traffic-analysis/documentation/bibliographie.bib'
-[302] Utils.pm:304> WARN - month field '23--24 Feb' in entry 'pmlr-v81-menon18a' is not an integer - this will probably not sort properly.
-[394] UCollate.pm:68> INFO - Overriding locale 'de_DE' defaults 'variable = shifted' with 'variable = non-ignorable'
-[394] UCollate.pm:68> INFO - Overriding locale 'de_DE' defaults 'normalization = NFD' with 'normalization = prenormalized'
-[394] Biber.pm:4084> INFO - Sorting list 'anyt/global//global/global' of type 'entry' with template 'anyt' and locale 'de_DE'
-[394] Biber.pm:4090> INFO - No sort tailoring available for locale 'de_DE'
-[420] bbl.pm:652> INFO - Writing '/Users/lucastanger/Documents/GitHub/traffic-analysis/documentation/.texpadtmp/dokumentation.bbl' with encoding 'UTF-8'
-[430] bbl.pm:755> INFO - Output to /Users/lucastanger/Documents/GitHub/traffic-analysis/documentation/.texpadtmp/dokumentation.bbl
-[431] Biber.pm:128> INFO - WARNINGS: 1
+[82] biber-darwin:322> INFO - === Mon Mar  8, 2021, 14:46:10
+[102] Biber.pm:415> INFO - Reading '/Users/lucastanger/Documents/GitHub/traffic-analysis/documentation/.texpadtmp/dokumentation.bcf'
+[196] Biber.pm:943> INFO - Found 21 citekeys in bib section 0
+[209] Biber.pm:4256> INFO - Processing section 0
+[209] Utils.pm:75> INFO - Globbing data source ''/Users/lucastanger/Documents/GitHub/traffic-analysis/documentation/bibliographie.bib''
+[209] Utils.pm:91> INFO - Globbed data source ''/Users/lucastanger/Documents/GitHub/traffic-analysis/documentation/bibliographie.bib'' to /Users/lucastanger/Documents/GitHub/traffic-analysis/documentation/bibliographie.bib
+[219] Biber.pm:4455> INFO - Looking for bibtex format file '/Users/lucastanger/Documents/GitHub/traffic-analysis/documentation/bibliographie.bib' for section 0
+[220] bibtex.pm:1653> INFO - LaTeX decoding ...
+[248] bibtex.pm:1471> INFO - Found BibTeX data source '/Users/lucastanger/Documents/GitHub/traffic-analysis/documentation/bibliographie.bib'
+[332] Utils.pm:304> WARN - month field '23--24 Feb' in entry 'pmlr-v81-menon18a' is not an integer - this will probably not sort properly.
+[436] UCollate.pm:68> INFO - Overriding locale 'de_DE' defaults 'normalization = NFD' with 'normalization = prenormalized'
+[436] UCollate.pm:68> INFO - Overriding locale 'de_DE' defaults 'variable = shifted' with 'variable = non-ignorable'
+[436] Biber.pm:4084> INFO - Sorting list 'anyt/global//global/global' of type 'entry' with template 'anyt' and locale 'de_DE'
+[436] Biber.pm:4090> INFO - No sort tailoring available for locale 'de_DE'
+[466] bbl.pm:652> INFO - Writing '/Users/lucastanger/Documents/GitHub/traffic-analysis/documentation/.texpadtmp/dokumentation.bbl' with encoding 'UTF-8'
+[479] bbl.pm:755> INFO - Output to /Users/lucastanger/Documents/GitHub/traffic-analysis/documentation/.texpadtmp/dokumentation.bbl
+[479] Biber.pm:128> INFO - WARNINGS: 1

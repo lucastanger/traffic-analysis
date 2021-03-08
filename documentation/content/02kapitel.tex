@@ -27,13 +27,29 @@ Zu unterscheiden sind hierbei drei verschiedenen Arten - \emph{Binäre}, \emph{M
 
 Es wird von zwei Klassen $C_1$ und $C_2$ ausgegangen. $t_1 \in [0,1]$ und $s_1$ sind die Grundwahrheit und der Wert für $C_1$; $t_2 = 1 - t_1$ sowie $s_2 = 1 - t_2$ für $C_2$ \cite{rubinstein2014cross}.
 
-Wenn der vorgegebene Raum $[0,1]$ für die Klassifizierung nicht ausreicht, kann die \emph{Multi-Class Classification} verwendet werden. Hierfür wird die Binäre Klassifikation durch eine Auswahl verschiedener Strategien an das vorgegebene Lernproblem angepasst. Eine Methode hierbei ist die Transformation in den binären Raum. 
+Sollte der vorgegebene Raum $[0,1]$ für die Klassifizierung nicht ausreichen, kann die \emph{Multi-Class Classification} eingesetzt werden. Hierfür wird die Binäre Klassifikation durch eine Auswahl verschiedener Strategien an das vorgegebene Lernproblem angepasst. Eine hierbei verwendete Methode ist die Transformation der Problemstellung in den binären Raum, welche mit Hilfe der \ac{OvR} oder \ac{OvO} Strategie umgesetzt werden kann. Die \ac{OvR}-Strategie beinhaltet dabei das Training eines einzelnen Klassifikators pro Klasse, wobei die Proben dieser Klasse als positive Proben und alle anderen Proben als negative Proben gelten. Diese Strategie erfordert, dass die Basisklassifikatoren einen realwertigen Konfidenzwert für ihre Entscheidung erzeugen und nicht nur ein Klassenetikett; diskrete Klassenetiketten allein können zu Mehrdeutigkeiten führen, bei denen mehrere Klassen für eine einzelne Probe vorhergesagt werden \cite[182]{Bishop2006}. Bei der \ac{OvO}-Strategie hingegen werden $K(K-1)/2$ binäre Klassifikatoren für ein $K$-Wege-Mehrklassenproblem trainiert. Jeder Klassifikator $K$ erhält die Proben eines Klassenpaares aus der ursprünglichen Trainingsmenge und muss lernen, diese beiden Klassen zu unterscheiden \cite[339]{Bishop2006}. Wie OvR leidet auch OvO unter Mehrdeutigkeiten, da einige Regionen des Eingaberaums die gleiche Anzahl von Stimmen erhalten können \cite[183]{Bishop2006}. 
+Neben dem Einsatz der Transformation in den binären Raum, kann ein binärer Klassifikator auch zur Lösung von Mehrklassen Problemen erweitert werden. Aufgrund der Bedeutsamkeit dieser Anpassungstechnik in Kontext dieser Arbeit, wird hierauf in Kapitel \ref{sec:ann} tiefer eingegangen.
 
 
 %Weiterführend wird hierauf in Kapitel \ref{sec:optimize} eingegangen.
 
 \newpage
 \subsection{Optimierungsverfahren für maschinelle Lernmethoden}\label{sec:optimize}
+
+Damit eine Vielzahl von optimalen Lösungen für verschiedene Fragestellungen ermittelt werden können, kommen Optimierungsverfahren zum Einsatz. Der Grundgedanke dieser ist es, die Parameter iterativ so zu verändern, dass eine Kostenfunktion minimiert wird. Für den Kontext dieser Arbeit werden im wesentlichen drei Verfahren unterschieden:
+
+\subsubsection{Gradientenverfahren}
+Das Gradientenverfahren ist anwendbar, um eine differenzierbare Funktion $f:\mathbb{R}^n \rightarrow\mathbb{R}$ mit einem reellen Wert zu erhalten, die minimiert werden soll:
+
+\begin{equation}
+	\min_{x\in\mathbb{R}^n} f(x).
+\end{equation}
+
+
+
+\subsubsection{Batch-Gradientenverfahren}
+
+\subsubsection{Stochastisches Gradientenverfahren}
 
 
 \begin{figure}[ht]
@@ -94,13 +110,14 @@ dx/.initial=0.01,dy/.initial=0.01}
  \addplot3[samples y=0,arrowed] coordinates \lstCoords;
 \end{axis}
 \end{tikzpicture}
+\caption{Gradientenabstieg}
 \end{figure}
 
 \section{Datenstromorientierte Programmierung mit TensorFlow}
 
 
 \newpage
-\subsection{Künstliche neuronale Netze}
+\subsection{Künstliche neuronale Netze}\label{sec:ann}
 
 Die Ursprünge der künstlichen neuronalen Netze lassen sich auf \citeauthor{mcculloch_pitts} im Jahre \citeyear{mcculloch_pitts} zurückführen \cite{mcculloch_pitts}. Eine von Donald O. Hebb 1949 formulierte Lernregel stellt seither in ihrer allgemeinen Form die Grundlage der künstlichen neuronalen Lernverfahren dar \cite{Mainzer1997}. Ein künstliches neuronales Netz besteht aus einer Eingabeschicht von Neuronen, $1..n$ versteckter Schichten und einer letzten Schicht von Ausgangsneuronen. Ein einzelnes Neuron nimmt überlicherweise mehrere Werte $x_{1},...,x_{n}$ und einen \gls{Bias}-Term $w_{0}$ als Eingabe und berechnet daraus die Ausgabe $y=h(z)$.
 
@@ -269,7 +286,7 @@ In der Mathematik wird die Faltung als eine Operation auf zwei Funktionen $f,g$ 
 	z_{i,j}=b+\sum_{u=0}^{f_{h}-1}\sum_{v=0}^{f_{w}-1}{x_{i+u,j+v}\cdot w_{u,v}}
 \end{equation}
 
-worin $z_{i,j}$ die Position innerhalb der Matrix $z$ beschreibt und $b$ der \gls{Bias} ist. Betrachtet man nun die Position $z_{i,j}$ in der Ausgabe eines Layers gilt 
+worin $z_{i,j}$ die Position innerhalb der Matrix $z$ beschreibt und $b$ der \gls{Bias} ist \cite[6]{karl2020}. Betrachtet man nun die Position $z_{i,j}$ in der Ausgabe eines Layers gilt 
 
 \begin{equation}
 	z_{i,j}=b+\sum_{u=0}^{f_{h}-1}\sum_{v=0}^{f_{w}-1}{x_{i',j'}\cdot w_{u,v}}\text{  \space\space\space    } \begin{cases}
@@ -277,14 +294,16 @@ worin $z_{i,j}$ die Position innerhalb der Matrix $z$ beschreibt und $b$ der \gl
 \end{cases}
 \end{equation}
 
-Die darauffolgende \emph{Volume Convolution} erweitert die Gleichung um einen Parameter $k$ , der die Anzahl der Farbräume in die Gleichung einbezieht. Es gilt
+worin $s_h$ der vertikale und $s_w$ der horizontale Stride sind \cite[13\psq]{karl2020}. Der Stride ist eine Komponente des \ac{CNN}, abgestimmt auf die Kompression des Eingabedatensatzes. Weitergehend wird er als Parameter des \ac{CNN}-Filters bezeichnet, der die Bewegung  über die Eingabematrix bestimmt.
+
+Die darauffolgende \emph{Volume Convolution} erweitert die Gleichung um einen Parameter $k$ , der die Anzahl der Farbräume in die Gleichung einbezieht \cites[25]{karl2020}[365]{Géron2017}. Es gilt
 	
 \begin{equation}
 	z_{i,j,k'}=b_{k'}+\sum_{c=1}^k{}\sum_{u=0}^{f_{h}-1}\sum_{v=0}^{f_{w}-1}{x_{i',j',c}\cdot w_{u,v,c,k'}}\text{  \space\space\space    } \begin{cases}
 	i' = i \cdot s_{h} + u \\ j' = j \cdot s_{w} + v 
 \end{cases}
 \end{equation}
-Die Anzahl der Parameter eines \ac{CNN} ist unabhängig von der Eingabe, jedoch abhängig von der Größe des Filters. Allgemein gilt daher 
+Die Anzahl der Parameter eines \ac{CNN} ist unabhängig von der Eingabe, jedoch abhängig von der Größe des Filters \cite[28]{karl2020}. Allgemein gilt daher 
 
 \begin{equation}
 	\text{\#{ }Params}_{conv} = (f_{w} \cdot f_{h} \cdot k^{l-1} + 1) \cdot k^l

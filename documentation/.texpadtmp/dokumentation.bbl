@@ -19,6 +19,35 @@
 
 \refsection{0}
   \datalist[entry]{anyt/global//global/global}
+    \entry{Bishop2006}{book}{}
+      \name{author}{1}{}{%
+        {{hash=9dfd0135a5e80aa6d81cea2c10fb7f73}{%
+           family={Bishop},
+           familyi={B\bibinitperiod},
+           given={Christopher\bibnamedelima M.},
+           giveni={C\bibinitperiod\bibinitdelim M\bibinitperiod}}}%
+      }
+      \list{location}{1}{%
+        {Berlin, Heidelberg}%
+      }
+      \list{publisher}{1}{%
+        {Springer}%
+      }
+      \strng{namehash}{9dfd0135a5e80aa6d81cea2c10fb7f73}
+      \strng{fullhash}{9dfd0135a5e80aa6d81cea2c10fb7f73}
+      \strng{bibnamehash}{9dfd0135a5e80aa6d81cea2c10fb7f73}
+      \strng{authorbibnamehash}{9dfd0135a5e80aa6d81cea2c10fb7f73}
+      \strng{authornamehash}{9dfd0135a5e80aa6d81cea2c10fb7f73}
+      \strng{authorfullhash}{9dfd0135a5e80aa6d81cea2c10fb7f73}
+      \field{labelalpha}{Bis06}
+      \field{sortinit}{B}
+      \field{sortinithash}{8de16967003c7207dae369d874f1456e}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{isbn}{978-0-387-31073-2}
+      \field{title}{Pattern Recognition and Machine Learning}
+      \field{year}{2006}
+    \endentry
     \entry{Cord2008}{book}{}
       \name{author}{2}{}{%
         {{hash=2cd60d757e4f4b8b7c6318fd2b1be3fe}{%
@@ -116,6 +145,35 @@
       \field{volume}{3}
       \field{year}{1973}
     \endentry
+    \entry{Géron2017}{book}{}
+      \name{author}{1}{}{%
+        {{hash=e54e6c9ce5d233c7046a00f7b3faa6c0}{%
+           family={Géron},
+           familyi={G\bibinitperiod},
+           given={Aurélien},
+           giveni={A\bibinitperiod}}}%
+      }
+      \list{location}{1}{%
+        {Sebastopol}%
+      }
+      \list{publisher}{1}{%
+        {O'Reilly}%
+      }
+      \strng{namehash}{e54e6c9ce5d233c7046a00f7b3faa6c0}
+      \strng{fullhash}{e54e6c9ce5d233c7046a00f7b3faa6c0}
+      \strng{bibnamehash}{e54e6c9ce5d233c7046a00f7b3faa6c0}
+      \strng{authorbibnamehash}{e54e6c9ce5d233c7046a00f7b3faa6c0}
+      \strng{authornamehash}{e54e6c9ce5d233c7046a00f7b3faa6c0}
+      \strng{authorfullhash}{e54e6c9ce5d233c7046a00f7b3faa6c0}
+      \field{labelalpha}{Gér17}
+      \field{sortinit}{G}
+      \field{sortinithash}{62eb2aa29549e4fdbd3cb154ec5711cb}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{isbn}{978-3-960-09061-8}
+      \field{title}{Praxiseinstieg Machine Learning mit Scikit-Learn und TensorFlow : Konzepte, Tools und Techniken für intelligente Systeme -}
+      \field{year}{2017}
+    \endentry
     \entry{imagenet}{online}{}
       \name{author}{1}{}{%
         {{hash=b318879f822314efe94c2f096d06465c}{%
@@ -206,6 +264,31 @@
       \verb https://jupyter.org/
       \endverb
       \keyw{jupyter,notebooks}
+    \endentry
+    \entry{karl2020}{manual}{}
+      \name{author}{1}{}{%
+        {{hash=2521c46d32f8b01f8f040a652b0b2d15}{%
+           family={Karl},
+           familyi={K\bibinitperiod},
+           given={Michael\bibnamedelima Dr.},
+           giveni={M\bibinitperiod\bibinitdelim D\bibinitperiod}}}%
+      }
+      \list{organization}{1}{%
+        {DHBW Stuttgart}%
+      }
+      \strng{namehash}{2521c46d32f8b01f8f040a652b0b2d15}
+      \strng{fullhash}{2521c46d32f8b01f8f040a652b0b2d15}
+      \strng{bibnamehash}{2521c46d32f8b01f8f040a652b0b2d15}
+      \strng{authorbibnamehash}{2521c46d32f8b01f8f040a652b0b2d15}
+      \strng{authornamehash}{2521c46d32f8b01f8f040a652b0b2d15}
+      \strng{authorfullhash}{2521c46d32f8b01f8f040a652b0b2d15}
+      \field{labelalpha}{Kar20}
+      \field{sortinit}{K}
+      \field{sortinithash}{d3edc18d54b9438a72c24c925bfb38f4}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{Grundlagen Maschineller Lernverfahren - Convolutional Neural Networks}
+      \field{year}{2020}
     \endentry
     \entry{NIPS2012_c399862d}{inproceedings}{}
       \name{author}{3}{}{%
