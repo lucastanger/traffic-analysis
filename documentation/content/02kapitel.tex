@@ -33,10 +33,9 @@ Neben dem Einsatz der Transformation in den binären Raum, kann ein binärer Kla
 
 %Weiterführend wird hierauf in Kapitel \ref{sec:optimize} eingegangen.
 
-\newpage
-\subsection{Optimierungsverfahren für maschinelle Lernmethoden}\label{sec:optimize}
+\subsection*{Optimierungsverfahren für maschinelle Lernmethoden}\label{sec:optimize}
 
-Damit eine Vielzahl von optimalen Lösungen für verschiedene Fragestellungen ermittelt werden können, kommen Optimierungsverfahren zum Einsatz. Der Grundgedanke dieser ist es, die Parameter iterativ so zu verändern, dass eine Kostenfunktion minimiert wird. Für den Kontext dieser Arbeit werden im wesentlichen drei Verfahren unterschieden:
+Damit eine Vielzahl von optimalen Lösungen für verschiedene Fragestellungen ermittelt werden kann, kommen Optimierungsverfahren zum Einsatz. Der Grundgedanke dieser ist es, die Parameter iterativ so zu verändern, dass eine Kostenfunktion minimiert wird.
 
 \subsubsection{Gradientenverfahren}
 Das Gradientenverfahren ist anwendbar, um eine differenzierbare Funktion $f:\mathbb{R}^n \rightarrow\mathbb{R}$ mit einem reellen Wert zu erhalten, die minimiert werden soll:
@@ -45,78 +44,28 @@ Das Gradientenverfahren ist anwendbar, um eine differenzierbare Funktion $f:\mat
 	\min_{x\in\mathbb{R}^n} f(x).
 \end{equation}
 
+Das Verfahren berechnet den lokalen Gradienten der Fehlerfunktion, entsprechend dem Parametervektor $\theta$ und bewegt sich in Richtung eines abnehmenden Gradienten. Sobald die Steigung Null annimmt, ist ein Minimum erreicht. Zu Beginn wird $\theta$ mit Zufallszahlen initialisiert, welche anschließend in kleinen Schritten verbessert werden um die Kostenfunktion\footnote{Als Kostenfunktion kann z.B. der \ac{MSE} eingesetzt werden.} zu senken. Dieser Schritt wird wiederholt, bis der Algorithmus bei einem lokalen Minimum konvergiert \cite[112\psq]{Géron2017} (siehe Abbildung \ref{fig:gradient_descent}). 
+
+\input{plots/gradient-descent}
+
+Bei der iterativen Suche eines Minimums ist dabei die Schrittgröße zu beachten. Diese wird durch die zuvor definierte Lernrate ermittelt, die als \gls{Hyperparameter} der Gleichung anzusehen ist. Ist die Lernrate zu klein, steigen die Schritte des Algorithmus, was ihn langsam und ineffizient werden lässt. Eine zu große Lernrate kann hingegen zur Divergenz des Algorithmus führen \cite[114]{Géron2017}.
 
 
-\subsubsection{Batch-Gradientenverfahren}
+\section{Datenstromorientierte Programmierung mit TensorFlow}
+%TensorFlow ist eine Open-Source Bibliothek für das Maschinelle Lernen und wird seit 2017 von Google angeboten. Es wurde vom Google Brain Team entwickelt und ermöglicht es dank zahlreicher \acp{API} Deep-Learning Aufgaben effizient zu lösen. Seit Ende 2019 ist TensorFlow 2 mit der Integration von Keras verfügbar. Der Kern von TensorFlow ist in der Programmiersprache C++ implementiert und ermöglicht die Ausführung von Operationen auf verschiedenen Hardwareplattformen (CPU, GPU und TPU) und Betriebssystemen. Parallel dazu wurde zur Verbesserung der Ausführungszeiten und Speicheroptimierung \ac{XLA} entwickelt, ein Compiler, der spezifische mathematische Funktionen für TensorFlow optimiert und sie hardwareunabhängig ausführen kann.
 
-\subsubsection{Stochastisches Gradientenverfahren}
-
+TensorFlow ist eine Open-Source-Bibliothek für maschinelles Lernen, die von Google seit 2017 angeboten wird. Sie wurde vom Google Brain Team entwickelt und ermöglicht dank vieler \acp{API} Deep-Learning, um Aufgaben effizient zu lösen. Seit Ende 2019 ist TensorFlow 2 mit Keras-Integration verfügbar. Der Kern von TensorFlow ist in der Programmiersprache C++ implementiert und ermöglicht die Ausführung von Operationen auf unterschiedlichen Hardware-Basen (\acs{CPU}, \ac{GPU} und \ac{TPU}) und Betriebssystemen.  Parallel dazu wurde zur Verbesserung der Ausführungszeiten und der Speicheroptimierung \ac{XLA} entwickelt, ein Compiler, der spezifische mathematische Funktionen für TensorFlow optimiert und diese unabhängig von der Hardware ausführen kann \cite[139\psq]{Deru2019}.
 
 \begin{figure}[ht]
 	\centering
-\tikzset{arrowed/.style={decorate,
-decoration={show path construction, 
-moveto code={},
-lineto code={
-\draw[#1] (\tikzinputsegmentfirst) --  (\tikzinputsegmentlast);
-},
-curveto code={},
-closepath code={},
-}},arrowed/.default={-stealth}}
-
-\pgfplotsset{gradient function/.initial=f,
-dx/.initial=0.01,dy/.initial=0.01}
-\pgfmathdeclarefunction{xgrad}{2}{%
-\begingroup%
-\pgfkeys{/pgf/fpu,/pgf/fpu/output format=fixed}%
-\edef\myfun{\pgfkeysvalueof{/pgfplots/gradient function}}%
-\pgfmathparse{(\myfun(#1+\pgfkeysvalueof{/pgfplots/dx},#2)%
--\myfun(#1,#2))/\pgfkeysvalueof{/pgfplots/dx}}%
- % \pgfmathsetmacro{\mysum}{\mysum+\myfun(\value{isum},#2)}%
-\pgfmathsmuggle\pgfmathresult\endgroup%
-}%
-\pgfmathdeclarefunction{ygrad}{2}{%
-\begingroup%
-\pgfkeys{/pgf/fpu,/pgf/fpu/output format=fixed}%
-\edef\myfun{\pgfkeysvalueof{/pgfplots/gradient function}}%
-\pgfmathparse{(\myfun(#1,#2+\pgfkeysvalueof{/pgfplots/dy})%
--\myfun(#1,#2))/\pgfkeysvalueof{/pgfplots/dy}}%
- % \pgfmathsetmacro{\mysum}{\mysum+\myfun(\value{isum},#2)}%
-\pgfmathsmuggle\pgfmathresult\endgroup%
-}%
-
-\pgfplotsset{compat=1.17}
-
-\begin{tikzpicture}
-\begin{axis}[width=12cm,%
-    declare function={f(\x,\y)=cos(deg(\x)*0.8)*cos(deg(\y)*0.6)*exp(0.1*\x);}]
- \addplot3[surf,shader=interp,domain=-4:3,%samples=81
- ]{f(x,y)};
- \edef\myx{1} % first x coordinate
- \edef\myy{0.25} % first y coordinate
- \edef\mystep{-0.25}% negative values mean descending
- \pgfmathsetmacro{\myf}{f(\myx,\myy)}
- \edef\lstCoords{(\myx,\myy,\myf)}
- \pgfplotsforeachungrouped\X in{0,...,5}
- {
- \pgfmathsetmacro{\mydx}{xgrad(\myx,\myy)}
- \pgfmathsetmacro{\mydy}{ygrad(\myx,\myy)}
- \pgfmathsetmacro{\myscale}{\mystep/sqrt(\mydx*\mydx+\mydy*\mydy)}
- \pgfmathsetmacro{\myx}{\myx+\myscale*\mydx}
- \pgfmathsetmacro{\myy}{\myy+\myscale*\mydy} 
- \pgfmathsetmacro{\myf}{f(\myx,\myy)}
- \edef\lstCoords{\lstCoords\space (\myx,\myy,\myf)}
- }
- \addplot3[samples y=0,arrowed] coordinates \lstCoords;
-\end{axis}
-\end{tikzpicture}
-\caption{Gradientenabstieg}
+	\includegraphics[width=\textwidth]{images/TF2-API-Struktur}
+	\caption[TensorFlow API Struktur]{API-Struktur von TensorFlow 2 (grafisch adaptiert von \cite[140]{Deru2019}\cites{TfAPI})}
+	\label{fig:tfstructure}
 \end{figure}
 
-\section{Datenstromorientierte Programmierung mit TensorFlow}
+\subsection{Tensoren}
+Grundlegender Bestandteil TensorFlows sind die schon im Namen enthaltenen Tensoren. Sie werden primär zur Datenspeicherung in neuronalen Netzen eingesetzt. 
 
-
-\newpage
 \subsection{Künstliche neuronale Netze}\label{sec:ann}
 
 Die Ursprünge der künstlichen neuronalen Netze lassen sich auf \citeauthor{mcculloch_pitts} im Jahre \citeyear{mcculloch_pitts} zurückführen \cite{mcculloch_pitts}. Eine von Donald O. Hebb 1949 formulierte Lernregel stellt seither in ihrer allgemeinen Form die Grundlage der künstlichen neuronalen Lernverfahren dar \cite{Mainzer1997}. Ein künstliches neuronales Netz besteht aus einer Eingabeschicht von Neuronen, $1..n$ versteckter Schichten und einer letzten Schicht von Ausgangsneuronen. Ein einzelnes Neuron nimmt überlicherweise mehrere Werte $x_{1},...,x_{n}$ und einen \gls{Bias}-Term $w_{0}$ als Eingabe und berechnet daraus die Ausgabe $y=h(z)$.
@@ -308,13 +257,6 @@ Die Anzahl der Parameter eines \ac{CNN} ist unabhängig von der Eingabe, jedoch 
 \begin{equation}
 	\text{\#{ }Params}_{conv} = (f_{w} \cdot f_{h} \cdot k^{l-1} + 1) \cdot k^l
 \end{equation}
-
-
-
-
-
-
-
 
 \section{Deep Learning mit Keras}
 

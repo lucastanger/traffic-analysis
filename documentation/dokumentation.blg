@@ -1,0 +1,19 @@
+[0] Config.pm:304> INFO - This is Biber 2.14
+[0] Config.pm:307> INFO - Logfile is '/Users/lucastanger/Documents/GitHub/traffic-analysis/documentation/dokumentation.blg'
+[111] biber-darwin:322> INFO - === Wed Mar 10, 2021, 10:38:21
+[130] Biber.pm:415> INFO - Reading '/Users/lucastanger/Documents/GitHub/traffic-analysis/documentation/dokumentation.bcf'
+[251] Biber.pm:943> INFO - Found 23 citekeys in bib section 0
+[267] Biber.pm:4256> INFO - Processing section 0
+[268] Utils.pm:75> INFO - Globbing data source 'bibliographie.bib'
+[268] Utils.pm:91> INFO - Globbed data source 'bibliographie.bib' to bibliographie.bib
+[280] Biber.pm:4455> INFO - Looking for bibtex format file 'bibliographie.bib' for section 0
+[282] bibtex.pm:1653> INFO - LaTeX decoding ...
+[322] bibtex.pm:1471> INFO - Found BibTeX data source 'bibliographie.bib'
+[401] Utils.pm:304> WARN - month field '23--24 Feb' in entry 'pmlr-v81-menon18a' is not an integer - this will probably not sort properly.
+[561] UCollate.pm:68> INFO - Overriding locale 'de_DE' defaults 'normalization = NFD' with 'normalization = prenormalized'
+[561] UCollate.pm:68> INFO - Overriding locale 'de_DE' defaults 'variable = shifted' with 'variable = non-ignorable'
+[561] Biber.pm:4084> INFO - Sorting list 'anyt/global//global/global' of type 'entry' with template 'anyt' and locale 'de_DE'
+[561] Biber.pm:4090> INFO - No sort tailoring available for locale 'de_DE'
+[606] bbl.pm:652> INFO - Writing '/Users/lucastanger/Documents/GitHub/traffic-analysis/documentation/dokumentation.bbl' with encoding 'UTF-8'
+[627] bbl.pm:755> INFO - Output to /Users/lucastanger/Documents/GitHub/traffic-analysis/documentation/dokumentation.bbl
+[627] Biber.pm:128> INFO - WARNINGS: 1
