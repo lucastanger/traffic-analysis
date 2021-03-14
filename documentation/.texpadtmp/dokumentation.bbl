@@ -19,6 +19,56 @@
 
 \refsection{0}
   \datalist[entry]{anyt/global//global/global}
+    \entry{ata2019modelling}{article}{}
+      \name{author}{5}{}{%
+        {{hash=a6df81259162a0626a1e91ccae3497f6}{%
+           family={Ata},
+           familyi={A\bibinitperiod},
+           given={A},
+           giveni={A\bibinitperiod}}}%
+        {{hash=8a8b25c3a0eeacdc8e7bae17474b7abb}{%
+           family={Khan},
+           familyi={K\bibinitperiod},
+           given={Muhammad\bibnamedelima Adnan},
+           giveni={M\bibinitperiod\bibinitdelim A\bibinitperiod}}}%
+        {{hash=55ed0b865eace7c033a9d57cc92d3509}{%
+           family={Abbas},
+           familyi={A\bibinitperiod},
+           given={Sagheer},
+           giveni={S\bibinitperiod}}}%
+        {{hash=67e539579b2ed9a4dcb447aa0fbded3d}{%
+           family={Ahmad},
+           familyi={A\bibinitperiod},
+           given={Gulzar},
+           giveni={G\bibinitperiod}}}%
+        {{hash=c7a985bb3ff8513c3b3e1a4fe65d774d}{%
+           family={Fatima},
+           familyi={F\bibinitperiod},
+           given={Areej},
+           giveni={A\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {Czech Technical University in Prague, Faculty of Transportation Sciences}%
+      }
+      \strng{namehash}{8e1889481336a1c942d575465ff9fa0d}
+      \strng{fullhash}{21872e5f44f36e11fa574c397b09dfcc}
+      \strng{bibnamehash}{8e1889481336a1c942d575465ff9fa0d}
+      \strng{authorbibnamehash}{8e1889481336a1c942d575465ff9fa0d}
+      \strng{authornamehash}{8e1889481336a1c942d575465ff9fa0d}
+      \strng{authorfullhash}{21872e5f44f36e11fa574c397b09dfcc}
+      \field{labelalpha}{Ata+19}
+      \field{sortinit}{A}
+      \field{sortinithash}{a3dcedd53b04d1adfd5ac303ecd5e6fa}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Neural Network World}
+      \field{number}{2}
+      \field{title}{Modelling smart road traffic congestion control system using machine learning techniques}
+      \field{volume}{29}
+      \field{year}{2019}
+      \field{pages}{99\bibrangedash 110}
+      \range{pages}{12}
+    \endentry
     \entry{Bishop2006}{book}{}
       \name{author}{1}{}{%
         {{hash=9dfd0135a5e80aa6d81cea2c10fb7f73}{%
@@ -145,6 +195,37 @@
       \field{volume}{3}
       \field{year}{1973}
     \endentry
+    \entry{devi2017machine}{article}{}
+      \name{author}{2}{}{%
+        {{hash=9357b99fe673a486db7df6d50c8c7964}{%
+           family={Devi},
+           familyi={D\bibinitperiod},
+           given={Suguna},
+           giveni={S\bibinitperiod}}}%
+        {{hash=2d13821d111c06686c025085759759ed}{%
+           family={Neetha},
+           familyi={N\bibinitperiod},
+           given={T},
+           giveni={T\bibinitperiod}}}%
+      }
+      \strng{namehash}{a6c75705d9380b3176450f5cbced3fd1}
+      \strng{fullhash}{974de907d83902423ac391809f4f5f8f}
+      \strng{bibnamehash}{974de907d83902423ac391809f4f5f8f}
+      \strng{authorbibnamehash}{974de907d83902423ac391809f4f5f8f}
+      \strng{authornamehash}{a6c75705d9380b3176450f5cbced3fd1}
+      \strng{authorfullhash}{974de907d83902423ac391809f4f5f8f}
+      \field{labelalpha}{DN17}
+      \field{sortinit}{D}
+      \field{sortinithash}{c438b3d5d027251ba63f5ed538d98af5}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Int. Res. J. Eng. Technol}
+      \field{title}{Machine Learning based traffic congestion prediction in a IoT based Smart City}
+      \field{volume}{4}
+      \field{year}{2017}
+      \field{pages}{3442\bibrangedash 3445}
+      \range{pages}{4}
+    \endentry
     \entry{Deru2019}{book}{}
       \name{author}{2}{}{%
         {{hash=4e0de4c6654e7c52d32a54eb0f19a66a}{%
@@ -178,6 +259,58 @@
       \field{isbn}{978-3-836-26509-6}
       \field{title}{Deep Learning mit TensorFlow, Keras und TensorFlow.js}
       \field{year}{2019}
+    \endentry
+    \entry{Atkočiūnas_Blake_Juozapavičius_Kazimianec_2005}{article}{}
+      \name{author}{4}{}{%
+        {{hash=de87d77c638a5e64e151edf80b9a375e}{%
+           family={E.},
+           familyi={E\bibinitperiod},
+           given={Atkočiūnas},
+           giveni={A\bibinitperiod}}}%
+        {{hash=4b7911a8554b3cb5adb7051d2c39aaf0}{%
+           family={R.},
+           familyi={R\bibinitperiod},
+           given={Blake},
+           giveni={B\bibinitperiod}}}%
+        {{hash=bd520f40b6f36099de56f3e24cd2f4fe}{%
+           family={A.},
+           familyi={A\bibinitperiod},
+           given={Juozapavičius},
+           giveni={J\bibinitperiod}}}%
+        {{hash=a458494aceef200b0e972a821d3c91f2}{%
+           family={M.},
+           familyi={M\bibinitperiod},
+           given={Kazimianec},
+           giveni={K\bibinitperiod}}}%
+      }
+      \strng{namehash}{33436f9a01dd2bc7342a3d897c4dc433}
+      \strng{fullhash}{6e5becbe687bffc592bd9e9184905c38}
+      \strng{bibnamehash}{33436f9a01dd2bc7342a3d897c4dc433}
+      \strng{authorbibnamehash}{33436f9a01dd2bc7342a3d897c4dc433}
+      \strng{authornamehash}{33436f9a01dd2bc7342a3d897c4dc433}
+      \strng{authorfullhash}{6e5becbe687bffc592bd9e9184905c38}
+      \field{labelalpha}{E+05}
+      \field{sortinit}{E}
+      \field{sortinithash}{c554bd1a0b76ea92b9f105fe36d9c7b0}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Nonlinear Analysis: Modelling and Control}
+      \field{month}{10}
+      \field{number}{4}
+      \field{title}{Image Processing in Road Traffic Analysis}
+      \field{volume}{10}
+      \field{year}{2005}
+      \field{pages}{315\bibrangedash 332}
+      \range{pages}{18}
+      \verb{doi}
+      \verb 10.15388/NA.2005.10.4.15112
+      \endverb
+      \verb{urlraw}
+      \verb https://www.journals.vu.lt/nonlinear-analysis/article/view/15112
+      \endverb
+      \verb{url}
+      \verb https://www.journals.vu.lt/nonlinear-analysis/article/view/15112
+      \endverb
     \endentry
     \entry{Géron2017}{book}{}
       \name{author}{1}{}{%
@@ -854,6 +987,39 @@
       \endverb
       \verb{url}
       \verb https://doi.org/10.1007/978-1-4615-0377-4_5
+      \endverb
+    \endentry
+    \entry{9148964}{inproceedings}{}
+      \name{author}{2}{}{%
+        {{hash=3702f1c146e64a6c91fc47b81ea59fc7}{%
+           family={{Wang}},
+           familyi={W\bibinitperiod},
+           given={J.},
+           giveni={J\bibinitperiod}}}%
+        {{hash=bab8638cab35589130818fc5cfd2ad65}{%
+           family={{Boukerche}},
+           familyi={B\bibinitperiod},
+           given={A.},
+           giveni={A\bibinitperiod}}}%
+      }
+      \strng{namehash}{a6d91c4b19ef84589045abd442c9ae02}
+      \strng{fullhash}{05ece6733c05819015ec03e4b5d3221f}
+      \strng{bibnamehash}{05ece6733c05819015ec03e4b5d3221f}
+      \strng{authorbibnamehash}{05ece6733c05819015ec03e4b5d3221f}
+      \strng{authornamehash}{a6d91c4b19ef84589045abd442c9ae02}
+      \strng{authorfullhash}{05ece6733c05819015ec03e4b5d3221f}
+      \field{labelalpha}{WB20}
+      \field{sortinit}{W}
+      \field{sortinithash}{1af34bd8c148ffb32de1494636b49713}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{booktitle}{ICC 2020 - 2020 IEEE International Conference on Communications (ICC)}
+      \field{title}{The Scalability Analysis of Machine Learning Based Models in Road Traffic Flow Prediction}
+      \field{year}{2020}
+      \field{pages}{1\bibrangedash 6}
+      \range{pages}{6}
+      \verb{doi}
+      \verb 10.1109/ICC40277.2020.9148964
       \endverb
     \endentry
     \entry{Yan2020}{book}{}

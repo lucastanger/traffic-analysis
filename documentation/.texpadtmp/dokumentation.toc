@@ -29,66 +29,66 @@
 \defcounter {refsection}{0}\relax 
 \contentsline {section}{\numberline {2.4}Datenstromorientierte Programmierung mit TensorFlow}{5}{section.2.4}%
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {2.4.1}Tensoren}{5}{subsection.2.4.1}%
+\contentsline {subsection}{\numberline {2.4.1}Tensoren}{6}{subsection.2.4.1}%
 \defcounter {refsection}{0}\relax 
 \contentsline {subsection}{\numberline {2.4.2}Künstliche neuronale Netze}{6}{subsection.2.4.2}%
 \defcounter {refsection}{0}\relax 
 \contentsline {subsection}{\numberline {2.4.3}Convolutional Neural Networks}{7}{subsection.2.4.3}%
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {2.5}Deep Learning mit Keras}{8}{section.2.5}%
+\contentsline {section}{\numberline {2.5}Deep Learning mit Keras}{9}{section.2.5}%
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {2.6}Verwandte Arbeiten}{8}{section.2.6}%
+\contentsline {section}{\numberline {2.6}Verwandte Arbeiten}{9}{section.2.6}%
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{\numberline {3}Analyse der Datenströme}{9}{chapter.3}%
+\contentsline {chapter}{\numberline {3}Analyse der Datenströme}{10}{chapter.3}%
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {3.1}Anforderungen an die Analyse}{9}{section.3.1}%
+\contentsline {section}{\numberline {3.1}Anforderungen an die Analyse}{10}{section.3.1}%
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {3.2}Datenaufbereitung}{9}{section.3.2}%
+\contentsline {section}{\numberline {3.2}Datenaufbereitung}{10}{section.3.2}%
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {3.2.1}Datenerhebung und Integration}{9}{subsection.3.2.1}%
+\contentsline {subsection}{\numberline {3.2.1}Datenerhebung und Integration}{10}{subsection.3.2.1}%
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {3.2.2}Datenberechnung}{9}{subsection.3.2.2}%
+\contentsline {subsection}{\numberline {3.2.2}Datenberechnung}{10}{subsection.3.2.2}%
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {3.2.3}Datenaggregation}{9}{subsection.3.2.3}%
+\contentsline {subsection}{\numberline {3.2.3}Datenaggregation}{10}{subsection.3.2.3}%
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {3.2.4}Datenbereinigung}{9}{subsection.3.2.4}%
+\contentsline {subsection}{\numberline {3.2.4}Datenbereinigung}{10}{subsection.3.2.4}%
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{\numberline {4}Entwicklung des Modells}{10}{chapter.4}%
+\contentsline {chapter}{\numberline {4}Entwicklung des Modells}{11}{chapter.4}%
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {4.1}Vorverarbeitung der Daten}{10}{section.4.1}%
+\contentsline {section}{\numberline {4.1}Vorverarbeitung der Daten}{11}{section.4.1}%
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {4.2}Entwurf eines Netzwerks zur Klassifikation von Objekten}{10}{section.4.2}%
+\contentsline {section}{\numberline {4.2}Entwurf eines Netzwerks zur Klassifikation von Objekten}{11}{section.4.2}%
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {4.4}Erheben einer Verkehrsstatistik}{10}{section.4.4}%
+\contentsline {section}{\numberline {4.4}Erheben einer Verkehrsstatistik}{11}{section.4.4}%
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {4.5}Statistische Bewertung des Modells}{10}{section.4.5}%
+\contentsline {section}{\numberline {4.5}Statistische Bewertung des Modells}{11}{section.4.5}%
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {4.5.1}Determination aussagekräftiger Metriken}{10}{subsection.4.5.1}%
+\contentsline {subsection}{\numberline {4.5.1}Determination aussagekräftiger Metriken}{11}{subsection.4.5.1}%
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{\numberline {5}Prototypische Implementierung}{11}{chapter.5}%
+\contentsline {chapter}{\numberline {5}Prototypische Implementierung}{12}{chapter.5}%
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {5.1}Aufbau des Prototypen}{11}{section.5.1}%
+\contentsline {section}{\numberline {5.1}Aufbau des Prototypen}{12}{section.5.1}%
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {5.2}Modellierung}{11}{section.5.2}%
+\contentsline {section}{\numberline {5.2}Modellierung}{12}{section.5.2}%
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {5.3}Deployment}{11}{section.5.3}%
+\contentsline {section}{\numberline {5.3}Deployment}{12}{section.5.3}%
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {5.4}Anpassbarkeit}{11}{section.5.4}%
+\contentsline {section}{\numberline {5.4}Anpassbarkeit}{12}{section.5.4}%
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{\numberline {6}Evaluation des Prototypen}{12}{chapter.6}%
+\contentsline {chapter}{\numberline {6}Evaluation des Prototypen}{13}{chapter.6}%
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {6.1}Metriken zur Bewertung der Klassifikation}{12}{section.6.1}%
+\contentsline {section}{\numberline {6.1}Metriken zur Bewertung der Klassifikation}{13}{section.6.1}%
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {6.2}Optimierung des neuronalen Netzes}{12}{section.6.2}%
+\contentsline {section}{\numberline {6.2}Optimierung des neuronalen Netzes}{13}{section.6.2}%
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {6.3}Evaluierung der Ergebnisse}{12}{section.6.3}%
+\contentsline {section}{\numberline {6.3}Evaluierung der Ergebnisse}{13}{section.6.3}%
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{\numberline {7}Abschluss}{13}{chapter.7}%
+\contentsline {chapter}{\numberline {7}Abschluss}{14}{chapter.7}%
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {7.1}Fazit}{13}{section.7.1}%
+\contentsline {section}{\numberline {7.1}Fazit}{14}{section.7.1}%
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {7.2}Ausblick}{13}{section.7.2}%
+\contentsline {section}{\numberline {7.2}Ausblick}{14}{section.7.2}%
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{\nonumberline Literatur}{14}{chapter*.20}%
+\contentsline {chapter}{\nonumberline Literatur}{15}{chapter*.21}%
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{Glossar}{17}{section*.21}%
+\contentsline {chapter}{Glossar}{18}{section*.22}%
