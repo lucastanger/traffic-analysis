@@ -7,9 +7,7 @@
 \par
 Jupyter Notebooks ist eine von der non-profit Organisation Project Jupyter entwickelte Open-Source Lösung zur interaktiven Arbeit mit Dutzenden Programmiersprachen \cite{project_jupyter}. Der Name Jupyter leitet sich dabei von den drei primären Programmiersprachen Julia, Python und R ab. Jupyter Notebooks ist sprachunabhängig und unterstützt, unter Verwendung des IPython \gls{Kernel}, die Programmiersprachen Julia, R, Haskell, Ruby und Python \cite{jupyter_kernel}. Darüber hinaus werden unterschiedlichste Export Möglichkeiten wie \ac{HTML}, \ac{PDF} und \LaTeX \space unterstützt. Die in diesem Projekt verwendete Variante von Jupyter Notebooks ist Google Colab, eine speziell für die Python-Entwicklung entworfene Umgebung. Colab Notebooks führen Code auf Cloud-Servern aus und bieten somit unabhängige Vorteile gehosteter Hardware, wie \acp{GPU} und \acp{TPU} \cite{colab_notebooks}.
 
-\section{Bildverarbeitungsalgorithmen mit OpenCV}
-
-\section{Maschinelle Lernverfahren}
+\section{Maschinelle Lernverfahren}\label{sec:machine_learning}
 
 Maschinelle Lernverfahren lassen sich in drei Bereiche unterteilen. \citeauthor{Sejnowski1999} beschreibt in seinem Buch \citetitle{Sejnowski1999} das Unüberwachte Lernen \emph{(unsupervised learning)} als maschinelles Lernverfahren, das ohne zuvor bekannte Werte oder Belohnungen, Abweichungen vom strukturlosen Rauschen erkennt \cite{Sejnowski1999}. Ferner wird von \citeauthor{duda1973pattern} die automatische Segmentierung (Clustering) und die Komprimierung von Daten zur Dimensionsreduktion erwähnt, die zum fortwährenden Erfolg der Lernmethode beitragen \cites[51\psq]{duda1973pattern}[51\psq]{Cord2008}. Als eine weitere maschinelle Lernmethode führt \citeauthor{Cord2008} das Überwachte Lernen \emph{(supervised learning)} an. Das Überwachte Lernen beinhaltet das Lernen einer Abbildung zwischen einem Satz von Eingangsvariablen $X$ und einer Ausgangsvariablen $Y$, sowie die Anwendung dieser Abbildung zur Vorhersage der Ausgabe für ungesehene Daten \cite[21\psqq]{Cord2008}. \citeauthor{Cord2008} nennt \citeyear{Cord2008} als verbreitestes Modell die \ac{SVM}, die ihre Stärken besonders in der Verarbeitung von Multimedialen Daten besitzt. Im Paradigma des überwachten Lernens besteht das Ziel darin, eine Funktion $f:X \longrightarrow Y$ aus einem Beispiel- oder Trainingssatz $A_{n}$ abzuleiten \cite[22]{Cord2008}. Sei hierzu $x_i \in X$ und $y_i \in Y$:
 
@@ -52,9 +50,7 @@ Bei der iterativen Suche eines Minimums ist dabei die Schrittgröße zu beachten
 
 
 \section{Datenstromorientierte Programmierung mit TensorFlow}
-%TensorFlow ist eine Open-Source Bibliothek für das Maschinelle Lernen und wird seit 2017 von Google angeboten. Es wurde vom Google Brain Team entwickelt und ermöglicht es dank zahlreicher \acp{API} Deep-Learning Aufgaben effizient zu lösen. Seit Ende 2019 ist TensorFlow 2 mit der Integration von Keras verfügbar. Der Kern von TensorFlow ist in der Programmiersprache C++ implementiert und ermöglicht die Ausführung von Operationen auf verschiedenen Hardwareplattformen (CPU, GPU und TPU) und Betriebssystemen. Parallel dazu wurde zur Verbesserung der Ausführungszeiten und Speicheroptimierung \ac{XLA} entwickelt, ein Compiler, der spezifische mathematische Funktionen für TensorFlow optimiert und sie hardwareunabhängig ausführen kann.
-
-TensorFlow ist eine Open-Source-Bibliothek für maschinelles Lernen, die von Google seit 2017 angeboten wird. Sie wurde vom Google Brain Team entwickelt und ermöglicht dank vieler \acp{API} Deep-Learning, um Aufgaben effizient zu lösen. Seit Ende 2019 ist TensorFlow 2 mit Keras-Integration verfügbar. Der Kern von TensorFlow ist in der Programmiersprache C++ implementiert und ermöglicht die Ausführung von Operationen auf unterschiedlichen Hardware-Basen (\acs{CPU}, \ac{GPU} und \ac{TPU}) und Betriebssystemen.  Parallel dazu wurde zur Verbesserung der Ausführungszeiten und der Speicheroptimierung \ac{XLA} entwickelt, ein Compiler, der spezifische mathematische Funktionen für TensorFlow optimiert und diese unabhängig von der Hardware ausführen kann \cite[139\psq]{Deru2019}.
+TensorFlow ist eine Open-Source-Bibliothek für maschinelles Lernen, die von Google seit 2017 angeboten wird. Sie wurde vom Google Brain Team entwickelt und ermöglicht dank vieler \acp{API} Deep-Learning, um Aufgaben effizient zu lösen. Seit Ende 2019 ist TensorFlow 2 mit Keras-Integration verfügbar (siehe Kapitel \ref{sec:keras}). Der Kern von TensorFlow ist in der Programmiersprache C++ implementiert und ermöglicht die Ausführung von Operationen auf unterschiedlichen Hardware-Basen (\acs{CPU}, \ac{GPU} und \ac{TPU}) und Betriebssystemen.  Parallel dazu wurde zur Verbesserung der Ausführungszeiten und der Speicheroptimierung \ac{XLA} entwickelt, ein Compiler, der spezifische mathematische Funktionen für TensorFlow optimiert und diese unabhängig von der Hardware ausführen kann \cite[139\psq]{Deru2019}.
 
 \begin{figure}[ht]
 	\centering
@@ -64,7 +60,35 @@ TensorFlow ist eine Open-Source-Bibliothek für maschinelles Lernen, die von Goo
 \end{figure}
 
 \subsection{Tensoren}
-Grundlegender Bestandteil TensorFlows sind die schon im Namen enthaltenen Tensoren. Sie werden primär zur Datenspeicherung in neuronalen Netzen eingesetzt. 
+Grundlegender Bestandteil TensorFlows sind die schon im Namen enthaltenen Tensoren. Sie werden primär zur Datenspeicherung in neuronalen Netzen eingesetzt. Ein Tensor wird in TensorFlow als multidimensionales Array dargestellt. 
+
+\begin{figure}[htb]
+	\begin{subfigure}[ht]{0.33\textwidth}
+		\includegraphics{images/scalar}
+		\caption{Skalarer Tensor \cite{tf_tensor}}
+		\label{fig:scalartensor}
+	\end{subfigure}\hfill%
+	\begin{subfigure}[ht]{0.33\textwidth}
+		\includegraphics{images/vector}
+		\caption{Vektor Tensor \cite{tf_tensor}}
+		\label{fig:vectortensor}
+	\end{subfigure}\hfill%
+	\begin{subfigure}[ht]{0.33\textwidth}
+		\includegraphics{images/matrix}
+		\caption{Matrix Tensor \cite{tf_tensor}}
+		\label{fig:matrixtensor}
+	\end{subfigure}\hfill%
+	\caption{Darstellung Skalar, Vektor und Matrix Tensor}
+\end{figure}
+
+Tensoren werden als unveränderliche Variablen gespeichert, das heißt ein Tensor kann niemals aktualisiert werden, sondern muss neu erstellt werden um Anpassungen vorzunehmen. Die Dimensionalität eines Tensors kann vom Benutzer angepasst werden. Dabei kann die Dimenionalität frei definiert werden, wie in Abbildung \ref{fig:scalartensor}, \ref{fig:vectortensor} und \ref{fig:matrixtensor} zu sehen. Darüber hinaus ist die multidimensionale Darstellung mit mehreren Achsen möglich (siehe Abbildung \ref{fig:multitensor}).
+
+\begin{figure}[htb]
+	\centering
+	\includegraphics[width=\textwidth]{images/multitensor}
+	\caption[Unterschiedliche Darstellung eines 3-Achsen Tensors]{Unterschiedliche Darstellung eines 3-Achsen Tensors der Form \text{[}3, 2, 5\text{]} \cite{tf_tensor}}
+	\label{fig:multitensor}
+\end{figure}
 
 \subsection{Künstliche neuronale Netze}\label{sec:ann}
 
@@ -100,7 +124,8 @@ wo $\varphi(\cdot)$ die Aktivierungsfunktion, $N$ die Anzahl der Eingangsneurone
 \end{equation}
 
 
-Weitere sigmoide Aktivierungsfunktionen sind der Arkustangens ($\arctan$) und Tangens Hyperbolikus ($\tanh$) \cite[195-201]{Networks1995}. Sie haben ein ähnliches Ansprechverhalten auf die Eingangswerte wie die Sigmoidfunktion, unterscheiden sich aber in den Ausgangsbereichen. 
+Weitere sigmoide Aktivierungsfunktionen sind der Arkustangens ($\arctan$) und Tangens Hyperbolikus ($\tanh$) \cite[195-201]{Networks1995}. Sie haben ein ähnliches Ansprechverhalten auf die Eingangswerte wie die Sigmoidfunktion, unterscheiden sich aber in den Ausgangsbereichen. Darüber hinaus gibt es noch nicht-sigmoide Funktionen wie die \ac{ReLU}, die ebenfalls häufig als Aktivierungsfunktion in neuronalen Netzen eingesetzt werden (siehe Abbildung \ref{fig:relu}).
+% Zitat einfügen
 
 \begin{figure}[htb]
 \centering
@@ -133,7 +158,40 @@ Weitere sigmoide Aktivierungsfunktionen sind der Arkustangens ($\arctan$) und Ta
 \caption{Darstellung der Sigmoid Aktivierungsfunktion}
 \end{figure}
 
-\subsection{Convolutional Neural Networks}
+\begin{figure}[htb]
+\centering
+\begin{tikzpicture}
+    \begin{axis}[
+        legend pos=north west,
+        axis x line=middle,
+        axis y line=middle,
+        y tick label style={/pgf/number format/fixed,
+                            /pgf/number format/fixed zerofill,
+                            /pgf/number format/precision=1},
+        grid = major,
+        width=16cm,
+        height=8cm,
+        grid style={dashed, gray!30},
+        xmin=-4,     % start the diagram at this x-coordinate
+        xmax= 4,     % end   the diagram at this x-coordinate
+        ymin= 0,     % start the diagram at this y-coordinate
+        ymax= 4,     % end   the diagram at this y-coordinate
+        %axis background/.style={fill=white},
+        xlabel=$f$,
+        ylabel=$f(x)$,
+        tick align=outside,
+        enlargelimits=true]
+      % plot the stirling-formulae
+      \addplot[mark=none, domain=-3:0, red, ultra thick,samples=500] {0)};
+      \addplot[mark=none, domain=0:5, red, ultra thick,samples=500] {x};
+      \addlegendentry{$f(x) = max(0,x)$}
+    \end{axis}
+\end{tikzpicture}
+\caption{Darstellung der ReLU Aktivierungsfunktion}\label{fig:relu}
+\end{figure}
+
+
+\subsection{Convolutional Neural Networks}\label{sec:cnn}
 
 Seitdem \gls{AlexNet} im Jahre 2012 eine Auszeichnung beim jährlichen Wettbewerb der Benchmark-Datenbank ImageNet erzielte \cite{imagenet}, hat sich der Forschungsfokus auf das Themengebiet \emph{Deep Learning} zubewegt \cites{NIPS2012_c399862d, rastegari2016xnornet, russakovsky2015imagenet}. Zuvor waren \acp{SVM} der prävaliernde Ansatz zur Erkennung von Mustern.
 
@@ -258,7 +316,98 @@ Die Anzahl der Parameter eines \ac{CNN} ist unabhängig von der Eingabe, jedoch 
 	\text{\#{ }Params}_{conv} = (f_{w} \cdot f_{h} \cdot k^{l-1} + 1) \cdot k^l
 \end{equation}
 
-\section{Deep Learning mit Keras}
+\section{Regionsbasierte Convolutional Neural Networks}
+
+Ein erweiterter Ansatz der \acp{CNN} sind die von \citeauthor{DBLP:journals/corr/GirshickDDM13} im Artikel \citetitle{DBLP:journals/corr/GirshickDDM13} vorgestellten \acp{R-CNN} \cite{DBLP:journals/corr/GirshickDDM13}. Der Artikel stellt ein fundamentales Konzept für alle modernen Objekterkennungen vor: Die Kombination von Regionsvorschlägen und \acp{CNN}.
+Das zu lösende Problem sind lokalisierbare Objekte in einem Bild. \citeauthor{DBLP:journals/corr/GirshickDDM13} erwähnt zunächst die Verwendung einer Brute-Force Methode, die das Bild mit unterschiedlichsten Rechtecken überdeckt und anschließend versucht, diese einzeln zu klassifizieren. Das damit einhergehende Problem sind eine Unmenge an zu klassifizierender Bilder, die die Performanz deutlich schmälern. \citeauthor{selfouly-rcnn} vereinfacht das hier erwähnte Konzept wie folgend:
+
+\begin{quote}
+	\"{} Region proposals are just smaller parts of the original image, that we think could contain the objects we are searching for. \cite{selfouly-rcnn} \"{}
+\end{quote}
+
+\subsection{Sliding Window Algorithmus}
+
+Der Sliding Window Algorithmus ist die zuvor erwähnte Methode, das Eingabebild mit einem verschiebbaren Kasten auszuwählen. Die dabei erzeugten Bildausschnitte werden jeweils unter Verwendung des Objekterkennungsmodells klassifiziert. Eine solche Methode muss alle Stellen im Bild abdecken, sowie verschiedene Maßstäbe der selektierten Bildausschnitte einbeziehen. Grund hierfür ist, dass Modelle zur Objekterkennung in der Regel für einen bestimmten Maßstab trainiert werden. Dies führt dazu, dass Zehntausende von Bildfeldern klassifiziert werden müssen. Der Sliding-Window-Ansatz ist gut für Objekte mit festem Seitenverhältnis, wie z. B. Gesichter oder Fußgänger. Bilder sind 2D-Projektionen von 3D-Objekten. Objektmerkmale wie das Seitenverhältnis und die Form variieren je nach Aufnahmewinkel erheblich. Der Sliding-Window-Ansatz ist sehr rechenintensiv, wenn nach mehreren Seitenverhältnissen gesucht wird \cite{learnopencv}.
+
+\subsection{Region Proposal Algorithmus}
+
+Das zuvor erwähnte Problem lässt sich mit Algorithmen zum Vorschlagen von Regionen lösen. Diese Methoden nehmen ein Bild als Eingabe und geben anschließend Begrenzungsrahmen aus, die allen Bereichen in einem Bild entsprechen, bei denen es sich höchstwahrscheinlich um Objekte handelt. Diese Regionsvorschläge können verrauscht sein, sich überlappen und das Objekt nicht perfekt enthalten. Jedoch wird unter diesen Regionsvorschlägen einen Vorschlag geben, der dem tatsächlichen Objekt im Bild sehr nahe kommt. Die somit erzeugten Vorschläge können mit einem Objekterkennungsmodell klassifiziert werden. Die Regionsvorschläge mit hohen Wahrscheinlichkeitswerten sind Standorte des Objekts \cite{learnopencv}.
+
+\begin{figure}[htb]
+	\centering
+	\includegraphics[width=0.8\textwidth]{images/object-recognition-false-positives-true-positives}
+	\caption[Darstellung des Region Proposal Algorithmus]{Regionsvorschläge - Blaue Boxen stellen False-Positives und Grüne Boxen True-Positives dar \cite{learnopencv}.}
+\end{figure}
+
+Algorithmen mit Regionsvorschlägen identifizieren voraussichtliche Objekte in einem Bild durch Segmentierung. Bei der Segmentierung werden benachbarte Regionen gruppiert, die einander ähnlich sind, anhand einiger Kriterien wie Farbe oder Textur. Im Gegensatz zum Sliding-Window-Ansatz, bei dem das Objekt an allen Pixelpositionen und in allen Maßstäben gesucht wird, gruppiert der Region-Proposal-Algorithmus die Pixel in eine kleinere Anzahl von Segmenten. Daher ist die endgültige Anzahl der generierten Vorschläge um ein Vielfaches geringer als beim Sliding-Window-Ansatz. Dadurch wird die Anzahl der zu klassifizierenden Bildbereiche reduziert. Diese generierten Regionsvorschläge haben unterschiedliche Maßstäbe und Seitenverhältnisse.
+
+\subsection{Selective Search Algorithmus}
+
+Selective Search ist ein Regionsvorschlag-Algorithmus, der bei der Objekterkennung verwendet wird. Er ist so konzipiert, dass er schnell ist und eine sehr hohe Wiedererkennung aufweist. Er basiert auf der Berechnung einer hierarchischen Gruppierung ähnlicher Regionen auf der Grundlage der Kompatibilität von Farbe, Textur, Größe und Form \cites{learnopencv}{UijlingsIJCV2013}. Selective Search beginnt mit einer Übersegmentierung des Bildes auf Basis der Intensität der Pixel unter Verwendung einer graphbasierten Segmentierungsmethode von \citeauthor{felzenszwalb1998ciently} \cite{felzenszwalb1998ciently}. Selective Search nimmt die Übersegmentierungen als initialen Input und iteriert anschließend über die Bildinkremente. 
+
+\begin{figure}
+	\centering
+	\includegraphics[width=\textwidth]{images/segmentation}
+	\caption[Hierarchischer Segmentierungsprozess]{Hierarchischer Segmentierungsprozess nach \citeauthor{UijlingsIJCV2013}\cites{learnopencv}{UijlingsIJCV2013}}
+	\label{fig:segmentation}
+\end{figure}
+
+\subsection{Berechnung der Segmentierung in der Theorie}
+
+Um aus den zuvor berechneten Segmenten eine Ähnlichkeit herauszufinden, werden vier unterschiedliche Berechnungsmethoden verwendet. 
+
+\subsubsection*{Farbmerkmale}
+
+Für jeden Kanal des Bildes wird ein Farbhistogramm mit 25 \glspl{Bin} berechnet und die Histogramme für alle Kanäle werden zu einem Farbdeskriptor verkettet, so dass sich ein $25*3 = 75$-dimensionaler Farbdeskriptor ergibt. Die Farbähnlichkeit zweier Regionen basiert auf der Histogrammschnittmenge und kann wie folgt berechnet werden \cite{learnopencv}
+
+\begin{equation}
+	s_{color}(r_{i},r_{j}) = \sum_{k=1}^{n} \min(c_{i}^k,c_{j}^k).
+\end{equation}
+
+$c^k_i$ ist der Histogrammwert für das $k^{te}$ \gls{Bin} im Farbdeskriptor.
+
+\subsubsection*{Texturmerkmale}
+
+Texturmerkmale werden durch Extraktion von Gauß-Ableitungen bei 8 Orientierungen für jeden Kanal berechnet. Für jede Ausrichtung und für jeden Farbkanal wird ein 10-\gls{Bin}-Histogramm berechnet, was zu einem 10x8x3 = 240-dimensionalen Merkmalsdeskriptor führt.
+Die Texturähnlichkeit zweier Regionen wird ebenfalls mithilfe von Histogrammschnittpunkten berechnet \cite{learnopencv}.
+
+\begin{equation}
+	s_{texture}(r_{i},r_{j}) = \sum_{k=1}^{n} \min(t_{i}^k,t_{j}^k).
+\end{equation}
+
+$t^k_i$ ist der Histogrammwert für das $k^{te}$ Bin im Texturdeskriptor.
+
+\subsubsection*{Größenmerkmale}
+
+Die Größenähnlichkeit regt kleinere Regionen dazu an, frühzeitig zu verschmelzen. Sie sorgt dafür, dass an allen Stellen des Bildes Regionsvorschläge in allen Maßstäben gebildet werden. Wenn dieses Ähnlichkeitsmaß nicht berücksichtigt wird, verschlingt eine einzelne Region nach und nach alle kleineren benachbarten Regionen und daher werden nur an dieser Stelle Regionsvorschläge in mehreren Maßstäben erzeugt \cite{learnopencv}. Die Größenähnlichkeit ist definiert als:
+
+\begin{equation}
+	s_{size}(r_{i},r_{j}) = \frac{\text{size}(r_i) + \text{size}(r_j)}{\text{size}(im)}.
+\end{equation}
+
+wo $\text{size}(im)$ die Größe des Bildes in Pixeln ist.
+
+\subsubsection*{Formkompatibilität}
+
+Die Formkompatibilität misst, wie gut zwei Regionen $r_i$ und $r_j$ ineinander passen. Wenn $r_i$ in $r_j$ passt, sollen diese zusammengeführt werden. Tritt der Fall ein, dass die beiden Regionen sich nicht berühren, werden sie nicht zusammengeführt \cite{learnopencv}. 
+
+Die Formkompatibilität ist definiert als:
+
+\begin{equation}
+	s_{fill}(r_{i},r_{j}) = 1 - \frac{\text{size}(BB_{ij}) - \text{size}(r_i) - \text{size}(r_j)}{\text{size}(im)}.
+\end{equation}
+
+wo $\text{size}(BB_{ij})$ eine \gls{BoundingBox} um $r_i$ und $r_j$ ist. 
+
+\subsection*{Finale Kompatibilität}
+
+Die finale Kompatibilität zweier Regionen des Bildes ist als eine lineare Kombination der zuvor genannten Merkmale definiert \cite{learnopencv}.
+
+\begin{equation}
+	s(r_{i},r_{j}) = a_1 s_{color}(r_i,r_j) + a_2 s_{texture}(r_i,r_j) + a_3 s_{size}(r_i,r_j) + a_4 s_{fill}(r_i,r_j).
+\end{equation}
+
+wo $r_i$ und $r_j$ zwei Regionen oder Segmente des Bildes sind und $a_i \in 0,1$ die Verwendung des Ähnlichkeitsmaßes ist.
 
 \section{Verwandte Arbeiten}
 Der Einsatz maschineller Lernmethoden zur Erkennung von Objekten im Straßenverkehr ist weit verbreitet.
@@ -273,6 +422,9 @@ Eine weitere Arbeit \cite{ata2019modelling} nimmt das dramatische Wachstum der B
 
 In der Arbeit \cite{devi2017machine} werden \ac{IOT}-Sensoren innerhalb eines Smart-City Szenarios eingesetzt, um Daten für eine Analyse des Verkehrsflusses unter Verwendung neuronaler Netze zu sammeln. Die dabei generierte Verkehrsstauvorhersage wird für die Analyse des Verkehrs sowie der Vorhersage von Staus auf bestimmten Strecken eingesetzt.
 
-In Abgrenzung zu den genannten Arbeiten wird in dieser Arbeit ein \ac{CNN} dazu eingesetzt, Verkehrsobjekte zu erkennen und eine aussagekräftige Statistik zu erzeugen.
+In Abgrenzung zu den genannten Arbeiten wird in dieser Arbeit ein \ac{R-CNN} dazu eingesetzt, Verkehrsobjekte zu erkennen, ihre Geschwindigkeit zu messen und zur Erzeugung einer aussagekräftigen Statistik beizutragen.
+
+
+
 
 
