@@ -3,19 +3,13 @@
 \babel@toc {english}{}
 \babel@toc {ngerman}{}
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{\nonumberline Abkürzungsverzeichnis}{VI}{chapter*.4}%
+\contentsline {chapter}{\nonumberline Abkürzungsverzeichnis}{VII}{chapter*.4}%
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{\nonumberline Abbildungsverzeichnis}{VII}{chapter*.5}%
+\contentsline {chapter}{\nonumberline Abbildungsverzeichnis}{VIII}{chapter*.5}%
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{\nonumberline Listings}{VIII}{chapter*.7}%
+\contentsline {chapter}{\nonumberline Listings}{X}{chapter*.7}%
 \defcounter {refsection}{0}\relax 
 \contentsline {chapter}{\numberline {1}Einleitung}{1}{chapter.1}%
-\defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {1.1}Motivation und Problemstellung}{1}{section.1.1}%
-\defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {1.2}Zielsetzung}{1}{section.1.2}%
-\defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {1.3}Methodik und Aufbau der Arbeit}{1}{section.1.3}%
 \defcounter {refsection}{0}\relax 
 \contentsline {chapter}{\numberline {2}Grundlagen und Stand der Forschung}{2}{chapter.2}%
 \defcounter {refsection}{0}\relax 
@@ -23,13 +17,13 @@
 \defcounter {refsection}{0}\relax 
 \contentsline {section}{\numberline {2.2}Maschinelle Lernverfahren}{2}{section.2.2}%
 \defcounter {refsection}{0}\relax 
-\contentsline {subsubsection}{\nonumberline Gradientenverfahren}{4}{section*.16}%
+\contentsline {subsubsection}{\nonumberline Gradientenverfahren}{4}{section*.17}%
 \defcounter {refsection}{0}\relax 
 \contentsline {section}{\numberline {2.3}Datenstromorientierte Programmierung mit TensorFlow}{5}{section.2.3}%
 \defcounter {refsection}{0}\relax 
 \contentsline {subsection}{\numberline {2.3.1}Tensoren}{6}{subsection.2.3.1}%
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {2.3.2}Künstliche neuronale Netze}{7}{subsection.2.3.2}%
+\contentsline {subsection}{\numberline {2.3.2}Artificial Neural Networks}{7}{subsection.2.3.2}%
 \defcounter {refsection}{0}\relax 
 \contentsline {subsection}{\numberline {2.3.3}Convolutional Neural Networks}{8}{subsection.2.3.3}%
 \defcounter {refsection}{0}\relax 
@@ -45,70 +39,48 @@
 \defcounter {refsection}{0}\relax 
 \contentsline {section}{\numberline {2.5}Verwandte Arbeiten}{14}{section.2.5}%
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{\numberline {3}Analyse der Datenströme}{16}{chapter.3}%
+\contentsline {chapter}{\numberline {3}Entwicklung des Modells}{16}{chapter.3}%
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {3.1}Anforderungen an die Analyse}{16}{section.3.1}%
+\contentsline {section}{\numberline {3.1}Vorverarbeitung der Daten}{16}{section.3.1}%
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {3.2}Datenaufbereitung}{16}{section.3.2}%
+\contentsline {subsection}{\numberline {3.1.1}Ausrichtung des Bildtensors}{17}{subsection.3.1.1}%
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {3.2.1}Datenerhebung und Integration}{16}{subsection.3.2.1}%
+\contentsline {subsection}{\numberline {3.1.2}Farbanpassung des Bildtensors}{18}{subsection.3.1.2}%
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {3.2.2}Datenberechnung}{16}{subsection.3.2.2}%
+\contentsline {subsection}{\numberline {3.1.3}Rotation des Bildtensors}{19}{subsection.3.1.3}%
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {3.2.3}Datenaggregation}{16}{subsection.3.2.3}%
+\contentsline {subsection}{\numberline {3.1.4}Inversion des Bildtensors}{20}{subsection.3.1.4}%
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {3.2.4}Datenbereinigung}{16}{subsection.3.2.4}%
+\contentsline {subsection}{\numberline {3.1.5}Finale Augmentation des Bildtensors}{21}{subsection.3.1.5}%
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{\numberline {4}Entwicklung des Modells}{17}{chapter.4}%
+\contentsline {section}{\numberline {3.2}Entwurf eines Netzwerks zur Klassifikation von Objekten}{22}{section.3.2}%
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {4.1}Vorverarbeitung der Daten}{17}{section.4.1}%
+\contentsline {subsection}{\numberline {3.2.1}Evaluierung der Anzahl an Convolutional Layers}{23}{subsection.3.2.1}%
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {4.1.1}Ausrichtung des Bildtensors}{18}{subsection.4.1.1}%
+\contentsline {subsection}{\numberline {3.2.2}Evaluierung der Feature-Map Größe}{24}{subsection.3.2.2}%
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {4.1.2}Farbanpassung des Bildtensors}{19}{subsection.4.1.2}%
+\contentsline {subsection}{\numberline {3.2.3}Bestimmung der Größe des Fully-Connected Layers}{25}{subsection.3.2.3}%
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {4.1.3}Rotation des Bildtensors}{20}{subsection.4.1.3}%
+\contentsline {subsection}{\numberline {3.2.4}Ermittlung des Dropout Thresholds}{26}{subsection.3.2.4}%
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {4.1.4}Inversion des Bildtensors}{21}{subsection.4.1.4}%
+\contentsline {section}{\numberline {3.3}Definition des finalen Modells}{28}{section.3.3}%
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {4.1.5}Finale Augmentation des Bildtensors}{22}{subsection.4.1.5}%
+\contentsline {chapter}{\numberline {4}Prototypische Implementierung}{29}{chapter.4}%
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {4.2}Entwurf eines Netzwerks zur Klassifikation von Objekten}{23}{section.4.2}%
+\contentsline {section}{\numberline {4.1}Bewegungserkennung}{29}{section.4.1}%
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {4.2.1}Evaluierung der Anzahl an Convolutional Layers}{24}{subsection.4.2.1}%
+\contentsline {section}{\numberline {4.2}Objekterkennung}{37}{section.4.2}%
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {4.2.2}Evaluierung der Feature-Map Größe}{25}{subsection.4.2.2}%
+\contentsline {section}{\numberline {4.3}Geschwindigkeits- und Fahrtrichtungserkennung}{42}{section.4.3}%
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {4.2.3}Bestimmung der Größe des Fully-Connected Layers}{26}{subsection.4.2.3}%
+\contentsline {section}{\numberline {4.4}Visualisierung und Erhebung von Statistiken}{45}{section.4.4}%
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {4.2.4}Ermittlung des Dropout Thresholds}{27}{subsection.4.2.4}%
+\contentsline {chapter}{\numberline {5}Abschluss}{48}{chapter.5}%
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {4.3}Definition des finalen Modells}{29}{section.4.3}%
+\contentsline {section}{\numberline {5.1}Fazit}{48}{section.5.1}%
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{\numberline {5}Prototypische Implementierung}{30}{chapter.5}%
+\contentsline {section}{\numberline {5.2}Ausblick}{49}{section.5.2}%
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {5.1}Bewegungserkennung}{30}{section.5.1}%
+\contentsline {chapter}{\nonumberline Literatur}{50}{chapter*.74}%
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {5.2}Objekterkennung}{36}{section.5.2}%
-\defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {5.3}Geschwindigkeitserkennung}{40}{section.5.3}%
-\defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {5.4}Fahrtrichtungserkennung}{40}{section.5.4}%
-\defcounter {refsection}{0}\relax 
-\contentsline {chapter}{\numberline {6}Evaluation des Prototypen}{41}{chapter.6}%
-\defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {6.1}Metriken zur Bewertung der Klassifikation}{41}{section.6.1}%
-\defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {6.2}Optimierung des neuronalen Netzes}{41}{section.6.2}%
-\defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {6.3}Evaluierung der Ergebnisse}{41}{section.6.3}%
-\defcounter {refsection}{0}\relax 
-\contentsline {chapter}{\numberline {7}Abschluss}{42}{chapter.7}%
-\defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {7.1}Fazit}{42}{section.7.1}%
-\defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {7.2}Ausblick}{42}{section.7.2}%
-\defcounter {refsection}{0}\relax 
-\contentsline {chapter}{\nonumberline Literatur}{43}{chapter*.62}%
-\defcounter {refsection}{0}\relax 
-\contentsline {chapter}{Glossar}{50}{section*.63}%
+\contentsline {chapter}{Glossar}{58}{section*.75}%

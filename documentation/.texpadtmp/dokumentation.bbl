@@ -96,6 +96,118 @@
       \verb https://qastack.com.de/computergraphics/39/how-is-gaussian-blur-implemented
       \endverb
     \endentry
+    \entry{asida_kalman}{article}{}
+      \name{author}{1}{}{%
+        {{hash=4db51baac1fc371a424a82b79ded26d3}{%
+           family={Beschorner},
+           familyi={B\bibinitperiod},
+           given={Jenny},
+           giveni={J\bibinitperiod}}}%
+      }
+      \strng{namehash}{4db51baac1fc371a424a82b79ded26d3}
+      \strng{fullhash}{4db51baac1fc371a424a82b79ded26d3}
+      \strng{bibnamehash}{4db51baac1fc371a424a82b79ded26d3}
+      \strng{authorbibnamehash}{4db51baac1fc371a424a82b79ded26d3}
+      \strng{authornamehash}{4db51baac1fc371a424a82b79ded26d3}
+      \strng{authorfullhash}{4db51baac1fc371a424a82b79ded26d3}
+      \field{labelalpha}{Bes12}
+      \field{sortinit}{B}
+      \field{sortinithash}{8de16967003c7207dae369d874f1456e}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Automobile Systeme in der Automatisierung}
+      \field{title}{Kalman Filter}
+      \field{year}{2012}
+      \verb{urlraw}
+      \verb https://www.uni-koblenz-landau.de/de/koblenz/fb4/ist/AGZoebel/Lehre/ss2012/seminar/jBeschorner
+      \endverb
+      \verb{url}
+      \verb https://www.uni-koblenz-landau.de/de/koblenz/fb4/ist/AGZoebel/Lehre/ss2012/seminar/jBeschorner
+      \endverb
+    \endentry
+    \entry{DBLP:journals/corr/BewleyGORU16}{article}{}
+      \name{author}{5}{}{%
+        {{hash=bcbacb46da933474a6ca4e4a69b7bfdc}{%
+           family={Bewley},
+           familyi={B\bibinitperiod},
+           given={Alex},
+           giveni={A\bibinitperiod}}}%
+        {{hash=1a4f5af0882b14379a6d5089f7069553}{%
+           family={Ge},
+           familyi={G\bibinitperiod},
+           given={ZongYuan},
+           giveni={Z\bibinitperiod}}}%
+        {{hash=fb8eb6ad8616d52c1a1ec4235cd9e9cc}{%
+           family={Ott},
+           familyi={O\bibinitperiod},
+           given={Lionel},
+           giveni={L\bibinitperiod}}}%
+        {{hash=506f85a881fe35bf140a4b7d845c70d7}{%
+           family={Ramos},
+           familyi={R\bibinitperiod},
+           given={Fabio},
+           giveni={F\bibinitperiod}}}%
+        {{hash=5c5358fbf9113fcf41a77a4b847721c7}{%
+           family={Upcroft},
+           familyi={U\bibinitperiod},
+           given={Ben},
+           giveni={B\bibinitperiod}}}%
+      }
+      \strng{namehash}{ce33a25ec7d15f29e5c6b6d4524d072d}
+      \strng{fullhash}{989a6f9654a46be9c789df1e1e077cb9}
+      \strng{bibnamehash}{ce33a25ec7d15f29e5c6b6d4524d072d}
+      \strng{authorbibnamehash}{ce33a25ec7d15f29e5c6b6d4524d072d}
+      \strng{authornamehash}{ce33a25ec7d15f29e5c6b6d4524d072d}
+      \strng{authorfullhash}{989a6f9654a46be9c789df1e1e077cb9}
+      \field{labelalpha}{Bew+16}
+      \field{sortinit}{B}
+      \field{sortinithash}{8de16967003c7207dae369d874f1456e}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{eprinttype}{arXiv}
+      \field{journaltitle}{CoRR}
+      \field{title}{Simple Online and Realtime Tracking}
+      \field{volume}{abs/1602.00763}
+      \field{year}{2016}
+      \verb{eprint}
+      \verb 1602.00763
+      \endverb
+      \verb{urlraw}
+      \verb http://arxiv.org/abs/1602.00763
+      \endverb
+      \verb{url}
+      \verb http://arxiv.org/abs/1602.00763
+      \endverb
+    \endentry
+    \entry{sort_gh}{online}{}
+      \name{author}{1}{}{%
+        {{hash=bcbacb46da933474a6ca4e4a69b7bfdc}{%
+           family={Bewley},
+           familyi={B\bibinitperiod},
+           given={Alex},
+           giveni={A\bibinitperiod}}}%
+      }
+      \strng{namehash}{bcbacb46da933474a6ca4e4a69b7bfdc}
+      \strng{fullhash}{bcbacb46da933474a6ca4e4a69b7bfdc}
+      \strng{bibnamehash}{bcbacb46da933474a6ca4e4a69b7bfdc}
+      \strng{authorbibnamehash}{bcbacb46da933474a6ca4e4a69b7bfdc}
+      \strng{authornamehash}{bcbacb46da933474a6ca4e4a69b7bfdc}
+      \strng{authorfullhash}{bcbacb46da933474a6ca4e4a69b7bfdc}
+      \field{labelalpha}{Bew21}
+      \field{sortinit}{B}
+      \field{sortinithash}{8de16967003c7207dae369d874f1456e}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{addendum}{(abgerufen am 07.06.2021)}
+      \field{title}{GitHub - SORT Algorithmus}
+      \field{year}{2021}
+      \verb{urlraw}
+      \verb https://github.com/abewley/sort
+      \endverb
+      \verb{url}
+      \verb https://github.com/abewley/sort
+      \endverb
+    \endentry
     \entry{Bishop2006}{book}{}
       \name{author}{1}{}{%
         {{hash=9dfd0135a5e80aa6d81cea2c10fb7f73}{%
@@ -701,6 +813,37 @@
       \verb https://www.kaggle.com/benhamner/popular-datasets-over-time/code
       \endverb
     \endentry
+    \entry{jonathanhui}{online}{}
+      \name{author}{1}{}{%
+        {{hash=6cfb5d2608616bce21708f853f01106e}{%
+           family={Hui},
+           familyi={H\bibinitperiod},
+           given={Jonathan},
+           giveni={J\bibinitperiod}}}%
+      }
+      \strng{namehash}{6cfb5d2608616bce21708f853f01106e}
+      \strng{fullhash}{6cfb5d2608616bce21708f853f01106e}
+      \strng{bibnamehash}{6cfb5d2608616bce21708f853f01106e}
+      \strng{authorbibnamehash}{6cfb5d2608616bce21708f853f01106e}
+      \strng{authornamehash}{6cfb5d2608616bce21708f853f01106e}
+      \strng{authorfullhash}{6cfb5d2608616bce21708f853f01106e}
+      \field{extraname}{1}
+      \field{labelalpha}{Hui18}
+      \field{sortinit}{H}
+      \field{sortinithash}{6db6145dae8dc9e1271a8d556090b50a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{addendum}{(abgerufen am 07.06.2021)}
+      \field{month}{3}
+      \field{title}{mAP (Mean Average Precision)}
+      \field{year}{2018}
+      \verb{urlraw}
+      \verb https://jonathan-hui.medium.com/map-mean-average-precision-for-object-detection-45c121a31173
+      \endverb
+      \verb{url}
+      \verb https://jonathan-hui.medium.com/map-mean-average-precision-for-object-detection-45c121a31173
+      \endverb
+    \endentry
     \entry{object_detection_comparison}{online}{}
       \name{author}{1}{}{%
         {{hash=6cfb5d2608616bce21708f853f01106e}{%
@@ -715,6 +858,7 @@
       \strng{authorbibnamehash}{6cfb5d2608616bce21708f853f01106e}
       \strng{authornamehash}{6cfb5d2608616bce21708f853f01106e}
       \strng{authorfullhash}{6cfb5d2608616bce21708f853f01106e}
+      \field{extraname}{2}
       \field{labelalpha}{Hui21}
       \field{sortinit}{H}
       \field{sortinithash}{6db6145dae8dc9e1271a8d556090b50a}
@@ -755,6 +899,33 @@
       \endverb
       \verb{url}
       \verb http://www.image-net.org/challenges/LSVRC/2012/results.html
+      \endverb
+    \endentry
+    \entry{hungarian_method}{online}{}
+      \name{author}{1}{}{%
+        {{hash=9f8f8aa642d086da4473f5c2941abe06}{%
+           family={ingenieurkurse.de},
+           familyi={i\bibinitperiod}}}%
+      }
+      \strng{namehash}{9f8f8aa642d086da4473f5c2941abe06}
+      \strng{fullhash}{9f8f8aa642d086da4473f5c2941abe06}
+      \strng{bibnamehash}{9f8f8aa642d086da4473f5c2941abe06}
+      \strng{authorbibnamehash}{9f8f8aa642d086da4473f5c2941abe06}
+      \strng{authornamehash}{9f8f8aa642d086da4473f5c2941abe06}
+      \strng{authorfullhash}{9f8f8aa642d086da4473f5c2941abe06}
+      \field{labelalpha}{ing21}
+      \field{sortinit}{i}
+      \field{sortinithash}{9417e9a1288a9371e2691d999083ed39}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{addendum}{(abgerufen am 07.06.2021)}
+      \field{title}{Ungarische Methode - Operations Research}
+      \field{year}{2021}
+      \verb{urlraw}
+      \verb https://www.ingenieurkurse.de/unternehmensforschung/branch-and-bound-tsp-weitere-iterationen/lineare-zuordnungsprobleme/ungarische-methode.html
+      \endverb
+      \verb{url}
+      \verb https://www.ingenieurkurse.de/unternehmensforschung/branch-and-bound-tsp-weitere-iterationen/lineare-zuordnungsprobleme/ungarische-methode.html
       \endverb
     \endentry
     \entry{jupyter_kernel}{online}{}
@@ -1012,6 +1183,85 @@
       \endverb
       \verb{url}
       \verb https://proceedings.neurips.cc/paper/2012/file/c399862d3b9d6b76c8436e924a68c45b-Paper.pdf
+      \endverb
+    \endentry
+    \entry{DBLP:journals/corr/LinMBHPRDZ14}{article}{}
+      \name{author}{10}{}{%
+        {{hash=08f925fe4692d130a1d7cb7d94483351}{%
+           family={Lin},
+           familyi={L\bibinitperiod},
+           given={Tsung-Yi},
+           giveni={T\bibinithyphendelim Y\bibinitperiod}}}%
+        {{hash=d980bc6930f008a0fb5fa667785f2309}{%
+           family={Maire},
+           familyi={M\bibinitperiod},
+           given={Michael},
+           giveni={M\bibinitperiod}}}%
+        {{hash=8f74ba6d25e498a6a4044b39ee30c903}{%
+           family={Belongie},
+           familyi={B\bibinitperiod},
+           given={Serge\bibnamedelima J.},
+           giveni={S\bibinitperiod\bibinitdelim J\bibinitperiod}}}%
+        {{hash=41d1867a5948033a654e06e5a0c87f22}{%
+           family={Bourdev},
+           familyi={B\bibinitperiod},
+           given={Lubomir\bibnamedelima D.},
+           giveni={L\bibinitperiod\bibinitdelim D\bibinitperiod}}}%
+        {{hash=c2c60ceb4a241891e128295a5ae80aef}{%
+           family={Girshick},
+           familyi={G\bibinitperiod},
+           given={Ross\bibnamedelima B.},
+           giveni={R\bibinitperiod\bibinitdelim B\bibinitperiod}}}%
+        {{hash=797fc3624ba315db58eef7279ace5bf3}{%
+           family={Hays},
+           familyi={H\bibinitperiod},
+           given={James},
+           giveni={J\bibinitperiod}}}%
+        {{hash=e52876f830a8a20786ff3e4d7dd6f083}{%
+           family={Perona},
+           familyi={P\bibinitperiod},
+           given={Pietro},
+           giveni={P\bibinitperiod}}}%
+        {{hash=aedcd3831845183e070aef16857d83ea}{%
+           family={Ramanan},
+           familyi={R\bibinitperiod},
+           given={Deva},
+           giveni={D\bibinitperiod}}}%
+        {{hash=ecd149fdcb3e0503881d49e545744c3d}{%
+           family={Doll{á}r},
+           familyi={D\bibinitperiod},
+           given={Piotr},
+           giveni={P\bibinitperiod}}}%
+        {{hash=0eae2d56a9cbb037c64028d6573877a7}{%
+           family={Zitnick},
+           familyi={Z\bibinitperiod},
+           given={C.\bibnamedelimi Lawrence},
+           giveni={C\bibinitperiod\bibinitdelim L\bibinitperiod}}}%
+      }
+      \strng{namehash}{3b7e00bc88d7aca4d4d5ddb8c252e36c}
+      \strng{fullhash}{99c0d934968c1f6af7da091395340c35}
+      \strng{bibnamehash}{3b7e00bc88d7aca4d4d5ddb8c252e36c}
+      \strng{authorbibnamehash}{3b7e00bc88d7aca4d4d5ddb8c252e36c}
+      \strng{authornamehash}{3b7e00bc88d7aca4d4d5ddb8c252e36c}
+      \strng{authorfullhash}{99c0d934968c1f6af7da091395340c35}
+      \field{labelalpha}{Lin+14}
+      \field{sortinit}{L}
+      \field{sortinithash}{dad3efd0836470093a7b4a7bb756eb8c}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{eprinttype}{arXiv}
+      \field{journaltitle}{CoRR}
+      \field{title}{Microsoft {COCO:} Common Objects in Context}
+      \field{volume}{abs/1405.0312}
+      \field{year}{2014}
+      \verb{eprint}
+      \verb 1405.0312
+      \endverb
+      \verb{urlraw}
+      \verb http://arxiv.org/abs/1405.0312
+      \endverb
+      \verb{url}
+      \verb http://arxiv.org/abs/1405.0312
       \endverb
     \endentry
     \entry{Mainzer1997}{inbook}{}
@@ -2578,6 +2828,50 @@
       \range{pages}{6}
       \verb{doi}
       \verb 10.1109/ICC40277.2020.9148964
+      \endverb
+    \endentry
+    \entry{DBLP:journals/corr/WojkeBP17}{article}{}
+      \name{author}{3}{}{%
+        {{hash=b926658d6906979bd0ae465c48154351}{%
+           family={Wojke},
+           familyi={W\bibinitperiod},
+           given={Nicolai},
+           giveni={N\bibinitperiod}}}%
+        {{hash=bcbacb46da933474a6ca4e4a69b7bfdc}{%
+           family={Bewley},
+           familyi={B\bibinitperiod},
+           given={Alex},
+           giveni={A\bibinitperiod}}}%
+        {{hash=1f5c853f3ca8527ecb2a0b427e774073}{%
+           family={Paulus},
+           familyi={P\bibinitperiod},
+           given={Dietrich},
+           giveni={D\bibinitperiod}}}%
+      }
+      \strng{namehash}{e3b21ca30a37c097e20088a3962cfa47}
+      \strng{fullhash}{27fcc3aedd10236cc79b384a3481a278}
+      \strng{bibnamehash}{27fcc3aedd10236cc79b384a3481a278}
+      \strng{authorbibnamehash}{27fcc3aedd10236cc79b384a3481a278}
+      \strng{authornamehash}{e3b21ca30a37c097e20088a3962cfa47}
+      \strng{authorfullhash}{27fcc3aedd10236cc79b384a3481a278}
+      \field{labelalpha}{WBP17}
+      \field{sortinit}{W}
+      \field{sortinithash}{1af34bd8c148ffb32de1494636b49713}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{eprinttype}{arXiv}
+      \field{journaltitle}{CoRR}
+      \field{title}{Simple Online and Realtime Tracking with a Deep Association Metric}
+      \field{volume}{abs/1703.07402}
+      \field{year}{2017}
+      \verb{eprint}
+      \verb 1703.07402
+      \endverb
+      \verb{urlraw}
+      \verb http://arxiv.org/abs/1703.07402
+      \endverb
+      \verb{url}
+      \verb http://arxiv.org/abs/1703.07402
       \endverb
     \endentry
     \entry{Yan2020}{book}{}

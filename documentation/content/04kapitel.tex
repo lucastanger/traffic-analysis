@@ -1,6 +1,6 @@
 %!TEX root = ../dokumentation.tex
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\chapter{Entwicklung des Modells}
+\chapter{Entwicklung des Modells}\label{sec:model}
 
 Als ersten Schritt zur Erkennung von Objekten im Straßenverkehr wird der Entwurf eines \ac{CNN} angeführt. Maßgeblichen Einfluss auf die Entscheidung der Architektur des \ac{CNN} sowie der Vorgehensweise hat die Arbeit \citetitle{rock_paper_scissors} \cite{rock_paper_scissors}. Das Modell wird als beispielhafte Implementierung einer \gls{mc_classification} entworfen und bietet somit die Möglichkeit einer theoretischen Transformation in eine \gls{ml_classification}. Als Datensatz wird der \ac{CIFAR}-10 Datensatz verwendet. Der \acs{CIFAR}-10-Datensatz ist eine Sammlung von Bildern, die üblicherweise zum Trainieren von Algorithmen für maschinelles Lernen und Computer Vision verwendet werden. Bestehend aus 60000 32x32 Farbbildern, unterteilt in 10 Klassen, ist es einer der am häufigsten verwendeten Datensätze für die Forschung zum maschinellen Lernen \cites{most_used_datasets_2}{most_used_datasets}. Das Test-Batch enthält 1000 zufällig ausgewählte Bilder jeder Klasse, wohingegen der Train-Batch die restlichen 5000 Bilder einer jeden Klasse enthält \cites{cifar10}{cifar10_2}.
 
@@ -310,7 +310,7 @@ Dropout wird als Regularisierungsmethode eingesetzt um die Gefahr von Overfittin
 
 \newpage
 
-\section{Definition des finalen Modells}
+\section{Definition des finalen Modells}\label{sec:finalmodel}
 
 Durch die in den vorherigen Kapiteln gewonnenen Erkenntnisse kann folglich ein finales Modell erstellt und mit dem initialen Modell verglichen werden. Das Modell setzt sich zusammen aus
 

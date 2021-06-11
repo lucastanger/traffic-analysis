@@ -1,22 +1,28 @@
 %!TEX root = ../dokumentation.tex
 
-\chapter{Prototypische Implementierung}
+\chapter{Prototypische Implementierung}\label{sec:prototypical_implementation}
+
+Mit diesem Prototyp soll ein Programm entwickelt werden, das mehrere Objekte in einer Videosequenz erkennt, deren Richtung und Geschwindigkeit misst und daraus Statistiken generiert. Verschiedene Verkehrsteilnehmer wie Fahrräder, Motorräder, Autos, LKWs und Busse sollen erkannt werden. Parkende Autos auf dem Standstreifen sollen von fahrenden unterschieden werden. Mehrere Fahrzeuge, die gleichzeitig in entgegengesetzte Richtungen fahren, sollen differenziert und vermessen werden. Es soll mit verschiedenen Blickwinkeln und Lichtverhältnissen gearbeitet werden können. Der Prototyp wurde mit den Tools OpenCV und Tensorflow 2 entwickelt und nutzt die Tensorflow Object Detection API.
 
 \section{Bewegungserkennung}
 
-Das Ziel der Bewegungserkennung ist es, nur sich bewegende Fahrzeuge zu analysieren und zu erkennen. Dieses Vorgehen wird mit Hilfe der OpenCV Hintergrundsubtraktion ermöglicht. 
+Das Ziel der Bewegungserkennung ist es, nur sich bewegende Fahrzeuge zu analysieren und zu erkennen. Dieses Vorgehen wird mit Hilfe der OpenCV Hintergrundsubtraktion ermöglicht. Die Hintergrundsubtraktion (engl. \emph{background subtraction}) ist eine gängige und weit verbreitete Vorgehensweise zur Erzeugung einer Vordergrundmaske unter Verwendung statischer Kameras. Wie der Name besagt, berechnet die Hintergrundsubtraktion die Vordergrundmaske durch die Subtraktion zwischen dem aktuellen Bild und einem Hintergrundmodell, das den statischen Teil der Szene enthält, oder allgemeiner all das, was auf Grund der Eigenschaften der beobachteten Szene als Hintergrund betrachtet werden kann. 
 
-Die Hintergrundsubtraktion (engl. \emph{background subtraction}) ist eine gängige und weit verbreitete Vorgehensweise zur Erzeugung einer Vordergrundmaske unter Verwendung statischer Kameras. Wie der Name besagt, berechnet die Hintergrundsubtraktion die Vordergrundmaske durch die Subtraktion zwischen dem aktuellen Bild und einem Hintergrundmodell, das den statischen Teil der Szene enthält, oder allgemeiner all das, was auf Grund der Eigenschaften der beobachteten Szene als Hintergrund betrachtet werden kann. 
 
-\begin{figure}[htb]
-	\centering
-	\includegraphics[width=\textwidth]{images/background_subtraction}
-	\caption[Vorgehen der Hintergrundsubtraktion]{Vorgehen der Hintergrundsubtraktion \cite{opencv_bg_subtraction}}
-\end{figure}
 
 Im ersten Schritt wird ein anfängliches Modell des Hintergrundes berechnet, während im nächsten Schritt dieses Modell aktualisiert wird, um sich an mögliche Änderugungen in der Szene anzupassen. Der Schwellenwert (engl. \emph{threshold}) legt fest, was als Vordergrund anerkannt wird. Resultierend aus der Berechnung entsteht eine Vordergrundmaske. 
 
-In diesem Prototypen wird eine Hintergrundsubtraktion mit dem \ac{MOG}2 Algorithmus durchgeführt. Dabei handelt es sich um einen Mixture-basierten Hintergrund-/Vordergrund Segmentierungsalgorithmus. \citeauthor{ZIVKOVIC2006773} führt diesen Algorithmus in den Arbeiten \citetitle{1333992} und \citetitle{ZIVKOVIC2006773} an \cites{1333992}{ZIVKOVIC2006773}. Eine wichtige Eigenschaft dieses Algorithmus ist die geeignete Anzahl von Gaußverteilungen für jeden Pixel. Er bietet somit eine bessere Anpassungsfähigkeit an wechselnde Szenen auf Grund von Beleuchtungsänderungen \cite{opencv_bg_subtraction2}. 
+In diesem Prototypen wird eine Hintergrundsubtraktion mit dem \ac{MOG}2 Algorithmus durchgeführt. Dabei handelt es sich um einen Mixture-basierten Hintergrund-/Vordergrund Segmentierungsalgorithmus. \citeauthor{ZIVKOVIC2006773} führt diesen Algorithmus in den Arbeiten \citetitle{1333992} und \citetitle{ZIVKOVIC2006773} an \cites{1333992}{ZIVKOVIC2006773}. 
+
+\newpage
+
+Eine wichtige Eigenschaft dieses Algorithmus ist die geeignete Anzahl von Gaußverteilungen für jeden Pixel. Er bietet somit eine bessere Anpassungsfähigkeit an wechselnde Szenen auf Grund von Beleuchtungsänderungen \cite{opencv_bg_subtraction2}. 
+
+\begin{figure}[htb]
+	\centering
+	\includegraphics[width=.9\textwidth]{images/background_subtraction}
+	\caption[Vorgehen der Hintergrundsubtraktion]{Vorgehen der Hintergrundsubtraktion \cite{opencv_bg_subtraction}}
+\end{figure}
 
 \vspace*{10mm}
 \begin{lstlisting}[caption={Generation der Hintergrundsubtraktion}, label={lst:bgsub}]
@@ -24,13 +30,18 @@ In diesem Prototypen wird eine Hintergrundsubtraktion mit dem \ac{MOG}2 Algorith
 fgbg = cv2.createBackgroundSubtractorMOG2(history=800, detectShadows=False, varThreshold=100)
 \end{lstlisting}
 
-Abbildung \ref{lst:bgsub} zeigt die Erstellung eines Hintergrundsubtraktionsobjekts für den Prototypen. Der Parameter \emph{history} wird dazu verwendet, um den Wert der Historie begrenzen zu können. Je höher dieser Wert ist, desto länger ist der Schweif den ein Objekt mit sich zieht. Für diesen Prototypen wurde die standardmäßige Schattenerkennung mit dem Parameter \emph{detectShadows} ausgeschaltet. Das Deaktivieren dieses Parameters führt zu einer deutlichen Leistungssteigerung des Algorithmus. \emph{varThreshold} ist ein Schwellenwert für den quadrierten Mahalanobis-Abstand zwischen dem Pixel und dem Modell. Dieser wird dazu verwendet, um zu entscheiden, ob ein Pixel durch das Hintergrundmodell gut beschrieben ist \cite{opencv_bg_subtraction3}. Bevor die Hintergrundsubktration auf das Video angewandt wird, muss das Video durch andere Hilfsfunktionen bearbeitet werden. Der erste Schritt zur genaueren Vorhersage ist die Grauskalierung \cite{cv_opencv}. 
+Abbildung \ref{lst:bgsub} zeigt die Erstellung eines Hintergrundsubtraktionsobjekts für den Prototypen. Der Parameter \emph{history} wird dazu verwendet, um den Wert der Historie begrenzen zu können. Je höher dieser Wert ist, desto länger ist der Schweif den ein Objekt mit sich zieht. Für diesen Prototypen wurde die standardmäßige Schattenerkennung mit dem Parameter \emph{detectShadows} ausgeschaltet. Das Deaktivieren dieses Parameters führt zu einer deutlichen Leistungssteigerung des Algorithmus. \emph{varThreshold} ist ein Schwellenwert für den quadrierten Mahalanobis-Abstand zwischen dem Pixel und dem Modell. Dieser wird dazu verwendet, um zu entscheiden, ob ein Pixel durch das Hintergrundmodell gut beschrieben ist \cite{opencv_bg_subtraction3}. Bevor die Hintergrundsubktration auf das Video angewandt wird, muss das Video durch andere Hilfsfunktionen bearbeitet werden. Der erste Schritt zur genaueren Vorhersage ist die Grauskalierung \cite{cv_opencv} (siehe Abbildung \ref{fig:grayscale}).  
 
-Abbildung Grauskalierung
+\begin{figure}[htb]
+	\centering
+	\includegraphics[width=.9\textwidth]{images/abbildung_grayscale}
+	\caption{Graustufen des Bildes}
+	\label{fig:grayscale}
+\end{figure}
 
-Eine Grauskalierung wird angewandt, da für die Bewegungserkennung keine Farbe benötigt wird und es zur Verbesserung der Anzeigequalität eines Bildes ohnehin zu einer Verminderung des Rauschens führt. 
+Eine Grauskalierung wird angewandt, da für die Bewegungserkennung keine Farbe benötigt wird und es zur Verbesserung der Anzeigequalität eines Bildes ohnehin zu einer Verminderung des Rauschens führt.
 
-\vspace*{10mm}
+\vspace*{5mm}
 \begin{lstlisting}[caption={Graustufen auf das Video anwenden}, label={lst:grayscaling}]
 # Apply grayscaling on video input
 gray_frame = cv2.cvtColor(src=frame, code=cv2.COLOR_BGR2GRAY)
@@ -44,9 +55,14 @@ Mit Hilfe der in Abbildung \ref{lst:grayscaling} aufgeführten Funktion \emph{cv
 	\label{eq:rgbatogray}
 \end{figure}
 
-Durch den in Abbildung \ref{eq:rgbatogray} aufgezeigten Vorgang wird die Multiplikation der einzelnen Farbkanäle dargestellt. Durch das multiplizieren der Kanäle mit der jeweiligen Konstante entsteht ein neuer RGB Wert $Y$. Dieser neue Wert kann im Anschluss auf das Bild angewandt werden, um eine Graustufierung zu ermöglichen \cite{opencv_bg_subtraction4}. Weitergehend wird auf das daraus entstandene Bild eine Gauß'sche Unschärfe eingesetzt. 
+Durch den in Abbildung \ref{eq:rgbatogray} aufgezeigten Vorgang wird die Multiplikation der einzelnen Farbkanäle dargestellt. Durch das multiplizieren der Kanäle mit der jeweiligen Konstante entsteht ein neuer RGB Wert $Y$. Dieser neue Wert kann im Anschluss auf das Bild angewandt werden, um eine Graustufierung zu ermöglichen \cite{opencv_bg_subtraction4} (siehe Abbildung \ref{fig:blur}). Weitergehend wird auf das daraus entstandene Bild eine Gauß'sche Unschärfe eingesetzt. Da auch bei zwei unterschiedlichen, in sehr kurzem Abstand aufgenommenen Bildern, ein Unterschied der Beleuchtung oder dem Sensor der Kamera festgestellt werden kann, ist die Verwendung dieser Unschärfeapplikation elementar. 
 
-Da auch bei zwei unterschiedlichen, in sehr kurzem Abstand aufgenommenen Bildern, ein Unterschied der Beleuchtung oder dem Sensor der Kamera festgestellt werden kann, ist die Verwendung dieser Unschärfeapplikation von Nöten. 
+\begin{figure}[htb]
+	\centering
+	\includegraphics[width=.9\textwidth]{images/abbildung_blur}
+	\caption{Weichzeichnen des Bildes}
+	\label{fig:blur}
+\end{figure}
 
 \vspace*{10mm}
 \begin{lstlisting}[caption={Anwendung des Weichzeichners}, label={lst:gaussianblur}]
@@ -84,15 +100,16 @@ Je größer der Kernel ist, desto größer ist der Radius der Unschärfe und die
 fgmask = fgbg.apply(blur_frame)
 \end{lstlisting}
 
-Das Ergebnis der Hintergrundsubtraktion ist eine Vordergrundmaske, wie in Abbildung \ref{eq:gaussian} zu sehen. Die weiß markierten Stellen stellen den Vordergrund dar, wohingegen die schwarzen Stellen den Hintergrund hervorheben. 
-
+Das Ergebnis der Hintergrundsubtraktion ist eine Vordergrundmaske (siehe Abbildung \ref{fig:vordergrundmaske}). Die weiß markierten Stellen stellen den Vordergrund dar, wohingegen die schwarzen Stellen den Hintergrund hervorheben. 
 
 \begin{figure}[htb]
 	\centering
-	\includegraphics{images/background_subtraction}
+	\includegraphics[width=.9\textwidth]{images/abbildung_fgmask}
 	\caption{Erzeugung einer Vordergrundmaske}
 	\label{fig:vordergrundmaske}
 \end{figure}
+
+\newpage
 
 Nachdem die beweglichen Elemente aus dem Video herauskristallisiert werden können, kann der Video Input für die Objekterkennung vorbereitet werden. Um dieses Ziel erfüllen zu können, wird die Vordergrundsubtraktion eingesetzt. 
 
@@ -103,7 +120,14 @@ dilated_frame = cv2.dilate(src=fgmask, kernel=np.ones((3,3),np.uint8), iteration
 \end{lstlisting}
 
 Eine Erweiterung, auch Dilation genannt, ist Bestandteil der mathematischen Morphologie. Die Morphologie ist eine Untergruppe der Bildverarbeitung. Dabei befasst man sich mit binären Bildern bzw. Rastergrafiken, also Bildern mit nur einem oder zwei Farbwerten \cite{Soille1998}. % TODO: Absolut sinnfreier Abschnitt
-Durch die Dilation der Vordergrundmaske werden kleine schwarze Flecken zwischen weißen Flächen verdeckt, sowie die weißen Flächen größer und zu einer Region zusammengefasst. In Abbildung \ref{} sind bereits größere Strukturen von Objekten zu erkennen, dennoch sind ungewollte, kleinere Flächen sichtbar. Diese werden im nächsten Schritt gefiltert und entfernt. Um die kleineren weißen Flecken zu entfernen werden zunächst alle Konturen der digitalen Vordergrundmaske gesucht, wie in Abbildung \ref{} dargestellt. 
+Durch die Dilation der Vordergrundmaske werden kleine schwarze Flecken zwischen weißen Flächen verdeckt, sowie die weißen Flächen größer und zu einer Region zusammengefasst. In Abbildung \ref{fig:dilation_foreground_mask} sind bereits größere Strukturen von Objekten zu erkennen, dennoch sind ungewollte, kleinere Flächen sichtbar. Diese werden im nächsten Schritt gefiltert und entfernt. Um die kleineren weißen Flecken zu entfernen werden zunächst alle Konturen der digitalen Vordergrundmaske gesucht. 
+
+\begin{figure}[htb]
+	\centering
+	\includegraphics[width=.9\textwidth]{images/abbildung_dilation}
+	\caption{Dilation der Vordergrundmaske}
+	\label{fig:dilation_foreground_mask}
+\end{figure}
 
 \vspace*{10mm}
 \begin{lstlisting}[caption={Finden aller Konturen in der Vordergrundmaske}, label={lst:foreground_dilation_detection}]
@@ -138,34 +162,44 @@ for contour in contours:
     cv2.rectangle(img=mask, pt1=(x, y), pt2=(x+w, y+h), color=(255,255,255), thickness=-1)
 \end{lstlisting}
 
-Nach der Filterung der Konturen können die geraden Begrenzungsrechtecke mit Hilfe der \emph{boundingRect} Funktion ermittelt werden. Als gerades Begrenzungsrechteck ist ein Rechteck gemeint, das die Rotation eines Objekts außer Acht lässt. Diese Rechtecke werden als weiße Rechtecke auf die zuvor ermittelte Maske aufgetragen. Der Parameter \emph{thickness} füllt das Rechteck mit der angegebenen Farbe aus, sofern dieser den Wert -1 beinhaltet. 
+Nach der Filterung der Konturen können die geraden Begrenzungsrechtecke mit Hilfe der \emph{boundingRect} Funktion ermittelt werden. Als gerades Begrenzungsrechteck ist ein Rechteck gemeint, das die Rotation eines Objekts außer Acht lässt. Diese Rechtecke werden als weiße Rechtecke auf die zuvor ermittelte Maske aufgetragen. Der Parameter \emph{thickness} füllt das Rechteck mit der angegebenen Farbe aus, sofern dieser den Wert -1 beinhaltet. Abschließend wird eine bitweise Verrechnung der Maske mit den im Video befindlichen Frames vorgenommen. Durch den $\cap$-Operator werden lediglich die weißen Stellen des Bildes hervorgehoben (siehe Abbildung \ref{fig:abbildungmask} und Auflistung \ref{lst:bitwise_operation}). Um diese Operation anwenden zu können müssen beide Bilder die selbe Größe und Form besitzen.
 
+\begin{figure}[htb]
+	\centering
+	\includegraphics[width=.9\textwidth]{images/abbildung_mask}
+	\caption{Gerade Begrenzungsrechtecke auf der Maske}
+	\label{fig:abbildungmask}
+\end{figure}
 
-Abschließend wird eine bitweise Verrechnung der Maske mit den im Video befindlichen Frames vorgenommen. Durch den $\cap$-Operator werden lediglich die weißen Stellen des Bildes hervorgehoben (siehe Abbildung \ref{} und \ref{}). Um diese Operation anwenden zu können müssen beide Bilder die selbe Größe und Form besitzen (siehe Abbildung \ref{lst:bitwise_operation}).
-
-\vspace*{10mm}
+\vspace*{1mm}
 \begin{lstlisting}[caption={UND-Operation der Maske und des aktuellen Bildes}, label={lst:bitwise_operation}]
 # Bitwise and operation
 movement_frame = cv2.bitwise_and(frame, mask)
 \end{lstlisting}
 
-Abbildung \ref{} zeigt das Ergebnis der Bewegungserkennung. Es werden nur Objekte, die sich im Video bewegen und groß genug für die Erkennung sind, angezeigt. Dies kann anschließend für die Objekterkennung verwendet werden. 
+Abbildung \ref{fig:bitwiseoperation} zeigt das Ergebnis der Bewegungserkennung. Es werden nur Objekte, die sich im Video bewegen und groß genug für die Erkennung sind, angezeigt. Dies kann anschließend für die Objekterkennung verwendet werden. 
 
-\section{Objekterkennung}
+\begin{figure}[htb]
+	\centering
+	\includegraphics[width=.9\textwidth]{images/abbildung_movement}
+	\caption{Bitweise Operation der Maske und des aktuellen Bildes}
+	\label{fig:bitwiseoperation}
+\end{figure}
 
-Um unterschiedliche Verkerhsteilnehmer wie Fahrräder, Autos und Motorräder wahrzunehmen, müssen diese Identifiziert und Erkannt werden. Unter Verwendung der Tensorflow Object Detection \ac{API} wird die Objekterkennung in diesem Prototyp umgesetzt \cite{tf_object_detection_github}. Die Tensorflow Object Detection API ist ein Open-Source Framework, welches auf Tensorflow aufbaut und das Konstruieren, Trainieren und Bereitstellen von Objekterkennungsmodellen erleichtert. Alle im Tensorflow Repository enthaltenen Modelle wurden anhand des \ac{COCO} 2017 Datensatzes trainiert. \ac{COCO} ist eine umfangreiche Objekterkennungs-, Segmentierungs- und Beschriftungsdatensatz Bibliothek mit über 330.000 Bildern und 91 Suchkategorien. Diese Modelle sind vor allem für Out-of-the-Box Inferenz nützlich, wenn die gewünschten Kategorien in den Datensätzen vorhanden sind. Objekte wie Fahrräder, Autos, Motorräder, LKWs und Busse sind bereits in den \ac{COCO} Datensätzen enthalten. Dies führt zu dem Anlass, ein bereits vortrainiertes Modell zu verwenden. Jedes Modell wird mit Hilfe der Geschwindigkeit in Millisekunden und der \ac{COCO} \ac{MAP} gemessen. Die Geschwindigkeit gibt an, wie lange ein Modell zur Erkennung von Objekten benötigt. Der \ac{COCO}-\ac{MAP} ist eine weitverbreitete Metrik zur Messung der Genauigkeit eines Modells. Je höher der \ac{MAP} Wert, desto genauer ist das Modell. Die Geschwindigkeit und der \ac{MAP} stehen häufig in Relation zueinander. % Quelle ?!
-Auf Grund dieser Merkmale muss das zu wählende Modell mit den Anforderungen des Projektes zusammenpassen. Für die Echtzeiterkennung wird ein schnelles Modell mit geringer Genauigkeit benötigt. Für diesen Prototypen wurde sich für das Modell mit dem höchsten \ac{COCO}-\ac{MAP} Wert entschieden. Diese Wahl bringt eine durchaus hohe Einbuße der Erkennungsgeschwindigkeit mit sich, welche jedoch auf Grund der Verzichtbarkeit einer Echtzeiterkennung nicht weiter relevant ist. Neben Boxen (Umrandung des Objekts) können Modelle ebenfalls Keypoints zurückgeben, die für die weitere Kompatibilität mit Prototypen relevant ist. Bei der Keypoint Erkennung werden Personen erkannt und gleichzeitig deren Keypoint lokalisiert. Keypoints sind räumliche Orte bzw. Punkte im Bild, die definieren, was interessant ist oder im Bild hervorsticht. Sie sind invariant gegenüber Bilddrehung, -Schrumpfung, -Verschiebung und -Verzerrung \cite{kp_detection}.
+\section{Objekterkennung}\label{ch:objekterkennung}
 
+Um unterschiedliche Verkerhsteilnehmer wie Fahrräder, Autos und Motorräder wahrzunehmen, müssen diese Identifiziert und Erkannt werden. Unter Verwendung der Tensorflow Object Detection \ac{API} wird die Objekterkennung in diesem Prototyp umgesetzt \cite{tf_object_detection_github}. Die Tensorflow Object Detection API ist ein Open-Source Framework, welches auf Tensorflow aufbaut und das Konstruieren, Trainieren und Bereitstellen von Objekterkennungsmodellen erleichtert \cite{tf_object_detection_github}. Alle im Tensorflow Repository enthaltenen Modelle wurden anhand des \ac{COCO} 2017 Datensatzes trainiert. \ac{COCO} ist eine umfangreiche Objekterkennungs-, Segmentierungs- und Beschriftungsdatensatz Bibliothek mit über 330.000 Bildern und 91 Suchkategorien \cite{DBLP:journals/corr/LinMBHPRDZ14}. Diese Modelle sind vor allem für Out-of-the-Box Inferenz nützlich, wenn die gewünschten Kategorien in den Datensätzen vorhanden sind. Objekte wie Fahrräder, Autos, Motorräder, LKWs und Busse sind bereits in den \ac{COCO} Datensätzen enthalten. Dies führt zu dem Anlass, ein bereits vortrainiertes Modell zu verwenden. Jedes Modell wird mit Hilfe der Geschwindigkeit in Millisekunden und der \ac{COCO} \ac{mAP} gemessen. Die Geschwindigkeit gibt an, wie lange ein Modell zur Erkennung von Objekten benötigt. Der \ac{COCO}-\ac{mAP} ist eine weitverbreitete Metrik zur Messung der Genauigkeit eines Modells \cite{jonathanhui}. Je höher der \ac{mAP} Wert, desto genauer ist das Modell. Die Geschwindigkeit und der \ac{mAP} stehen häufig in Relation zueinander. 
+Auf Grund dieser Merkmale muss das zu wählende Modell mit den Anforderungen des Projektes zusammenpassen. Für die Echtzeiterkennung wird ein schnelles Modell mit geringer Genauigkeit benötigt. Für diesen Prototypen wurde sich für das Modell mit dem höchsten \ac{COCO}-\ac{mAP} Wert entschieden. Diese Wahl bringt eine durchaus hohe Einbuße der Erkennungsgeschwindigkeit mit sich, welche jedoch auf Grund der Verzichtbarkeit einer Echtzeiterkennung nicht weiter relevant ist. Neben Boxen (Umrandung des Objekts) können Modelle ebenfalls Keypoints zurückgeben, die für die weitere Kompatibilität relevant ist. Bei der Keypoint Erkennung werden Personen erkannt und gleichzeitig deren Keypoint lokalisiert. Keypoints sind räumliche Orte bzw. Punkte im Bild, die definieren, was interessant ist oder im Bild hervorsticht. Sie sind invariant gegenüber Bilddrehung, -Schrumpfung, -Verschiebung und -Verzerrung \cite{kp_detection}.
 
-% TODO: Fix footnote
 \begin{figure}[htb]
 	\centering
 	\includegraphics[width=.9\textwidth]{images/keypoint-detection}
-	\caption[Keypoint Erkennung]{Keypoint Erkennung \footnote{https://raw.githubusercontent.com/openpifpaf/openpifpaf/main/docs/coco/000000081988.jpg.predictions.jpeg}}
+	\caption[Keypoint Erkennung]{Keypoint Erkennung \footnotemark}
 	\label{fig:keypoint-detection}
 \end{figure}
+\footnotetext{https://raw.githubusercontent.com/openpifpaf/openpifpaf/main/docs/coco/000000081988.jpg}
 
-Für diesen Prototypen wird das EfficientDet-D7 Modell verwendet, das mit einem \ac{COCO}-\ac{MAP} Wert von 51,2 im Tensorflow Model Zoo ideal dazu geeignet ist, um die markantesten Objekte in einem Bild zu lokalisieren \cite{efficientdet}. EfficientDet ist die Objekterkennungs Variante des weitverbreiteten EfficientNet \cite{tan2019efficientnet} und baut auf dessen Erfolg auf. EfficientNets stammen aus einer Familie von Modellen, die eine hohe Leistung bei Benchmark-Aufgaben erreichen, während sie für eine Reihe von Effizienzparametern wie Modellgröße und \acp{FLOP} kontrolliert werden. Das Netzwerk wird in einer Reihe von Modellgrößen d0-d7 ausgeliefert. \acp{FLOP} bemisst die Anzahl an Gleitkommaoperationen pro Sekunde und ist ein Maß für die Leistungsfähigkeit eines Modells \cite{object_detection_comparison}. 
+Für diesen Prototypen wird das EfficientDet-D7 Modell verwendet, das mit einem \ac{COCO}-\ac{mAP} Wert von 51,2 im Tensorflow Model Zoo ideal dazu geeignet ist, um die markantesten Objekte in einem Bild zu lokalisieren \cite{efficientdet}. EfficientDet ist die Objekterkennungs Variante des weitverbreiteten EfficientNet \cite{tan2019efficientnet} und baut auf dessen Erfolg auf. EfficientNets stammen aus einer Familie von Modellen, die eine hohe Leistung bei Benchmark-Aufgaben erreichen, während sie für eine Reihe von Effizienzparametern wie Modellgröße und \acp{FLOP} kontrolliert werden. Das Netzwerk wird in einer Reihe von Modellgrößen d0-d7 ausgeliefert. \acp{FLOP} bemisst die Anzahl an Gleitkommaoperationen pro Sekunde und ist ein Maß für die Leistungsfähigkeit eines Modells \cite{object_detection_comparison}. 
 
 \begin{figure}[htb]
 	\centering
@@ -173,8 +207,9 @@ Für diesen Prototypen wird das EfficientDet-D7 Modell verwendet, das mit einem 
 	\caption[Modell FLOPs vs COCO Genauigkeit]{Modell \acp{FLOP} vs. \ac{COCO} Genauigkeit \cite{tan2020efficientdet}}
 \end{figure}
 
-EfficientDet erreicht die beste Leistung, mit der geringsten Anzahl von Trainingsepochen, unter den Objekterkennungsmodellen. Dies ist insbesondere von Vorteil, wenn mit begrenzter Rechenleistung gearbeitet wird \cite{solawetz}. Bevor das vortrainierte Modell verwendet werden kann, wird dieses als verpackte Datei heruntergeladen. Ebenfalls enthalten ist die zugehörige Beschreibungsdatei, welche eine Liste von Strings beinhaltet, die zur richtigen Beschriftung eines Objekts dient. Jede Beschriftung ist durch eine ID, die später zur Visualisierung verwendet wird, eindeutig erkennbar. Nach dem Herunterladen des Modells wird dieses extrahiert und mit der Beschreibungsdatei geladen \cite{obd_api}.
-\vspace*{5mm}
+EfficientDet erreicht die beste Leistung, mit der geringsten Anzahl von Trainingsepochen, unter den Objekterkennungsmodellen. Dies ist insbesondere von Vorteil, wenn mit begrenzter Rechenleistung gearbeitet wird \cite{solawetz}. Bevor das vortrainierte Modell verwendet werden kann, wird dieses als verpackte Datei heruntergeladen. Ebenfalls enthalten ist die zugehörige Beschreibungsdatei, welche eine Liste von Strings beinhaltet, die zur richtigen Beschriftung eines Objekts dient. Jede Beschriftung ist durch eine ID, die später zur Visualisierung verwendet wird, eindeutig erkennbar. Nach dem Herunterladen des Modells wird dieses extrahiert und mit der Beschreibungsdatei geladen (siehe Auflistung \ref{lst:loading})\cite{obd_api}.
+
+\vspace*{10mm}
 \begin{lstlisting}[caption={Laden der Beschreibungsdatei mit anschließendem Erzeugen des Modells}, label={lst:loading}]
 category_index = label_map_util.create_category_index_from_labelmap(use_display_name=True)
 # Load pipeline config and build a detection model
@@ -240,13 +275,128 @@ Jede Zahl in dem \emph{detection\_classes} Tensor ist eine ID der in Auflistung 
  array([[0.65809727, 0.49682707, 0.32241914, 0.191383  , 0.16080539,
 \end{lstlisting}
 
-Das Dictionary \emph{detections} enthält weitere, nicht benötigte Ausgabe Parameter, die für diesen Prototypen jedoch irrelevant sind \cite{efficientdet}. Nicht alle Objekte die vom Modell erkannt werden, sind für die Objekterkennung notwendig. Daher werden die erkannten Objekte anhand der Klassen-ID gefiltert und aussortiert. Somit erhält man die Umrandungen, Klassen und Genauigkeiten eines einzelnen Bildes für die gewünschten Klassen. Die Visualisierung der Daten erfolgt in einem späteren Schritt. 
+Das Dictionary \emph{detections} enthält weitere Ausgabe Parameter, die für diesen Prototypen jedoch irrelevant sind \cite{efficientdet}. Nicht alle Objekte die vom Modell erkannt werden, sind für die Objekterkennung notwendig. Daher werden die erkannten Objekte anhand der Klassen-ID gefiltert und aussortiert. Somit erhält man die Umrandungen, Klassen und Genauigkeiten eines einzelnen Bildes für die gewünschten Klassen. Die Visualisierung der Daten erfolgt in einem späteren Schritt. 
+\newpage
+\section{Geschwindigkeits- und Fahrtrichtungserkennung}
 
-\section{Geschwindigkeitserkennung}
+Damit Geschwindigkeit und Fahrtrichtung mehrerer Objekte gleichzeitig gemessen werden kann, müssen die Objekte über die Frames hinaus getrackt werden. Die Objekterkennung bietet zwar die Möglichkeit, Objekte eines einzelnen Bildes zu erkennen, kann jedoch die Objekte des nächsten Frames nicht mit den vorherigen in Verbindung bringen. Auf Grund dieser Tatsache muss ein Tracking Algorithmus verwendet werden, der Objekte über verschiedene Bilder identifizieren kann. In diesem Prototypen wird das Verfolgen der Objekte mit Hilfe des \acs{SORT} Algorithmus durchgeführt. \ac{SORT} ist eine Barebone Implementierung einer visuellen Mehrfach-Objektverfolgung, die auf rudimentären Datenassoziations- und Zustandsschätzungs-Techniken basiert \cites{sort_gh}{DBLP:journals/corr/BewleyGORU16}. Es ist für Online-Tracking Anwendungen konzipiert, bei denen nur vergangene und aktuelle Frames zur Verfügung stehen \cite{sort_gh}.
 
-\section{Fahrtrichtungserkennung}
+\begin{figure}[htb]
+	\centering
+	\includegraphics[width=.9\textwidth]{images/sort}
+	\caption[Performance Benchmark unterschiedlicher Tracking Algorithmen]{Performance Benchmark unterschiedlicher Tracking Algorithmen \cite{DBLP:journals/corr/BewleyGORU16}}
+	\label{fig:sort}
+\end{figure}
 
+Bei der Veröffentlichung am 7. Juli 2017 gehört der \ac{SORT} Algorithmus zu den besten Open-Source Trackern \cite{DBLP:journals/corr/BewleyGORU16} (siehe Abbildung \ref{fig:sort}). Minimalistische Tracker behandeln keine Verdeckung oder wieder eintretende Objekte und dienen als Basis und Testumgebung für die Entwicklung zukünftiger Tracker. Jedoch muss beachtet werden, dass die Genauigkeit des Trackers stark von der Objekterkennung abhängig ist \cite{sort_gh}. Trotz alledem ist der \ac{SORT} Algorithmus, dank der simplen Einbindung und der Leistungsfähigkeit, ein gutes Werkzeug um Objekte im Prototypen zu verfolgen. \ac{SORT} verwendet zwei verbreitete Techniken um Objekte zu verfolgen: den Kalman Filter und die ungarische Methode. 
 
+\begin{quote}
+	\"{}Der Kalman Filter findet einen Schätzer eines dynamischen Systems anhand von vorherigen Messungen und einem Systemmodell, welches das zu messende System simuliert. Der Kalman Filter benutzt die Information, welche ihm das vorherige Zeitintervall liefert, um eine a-priori Vorhersage zu treffen. Diese wird dann anhand einer neuen Messung korrigiert\"{} \cite{asida_kalman}.
+\end{quote}
+
+Die Ungarische Methode ist dazu gedacht, lineare Zuordnungsprobleme zu lösen \cite{hungarian_method}. Beide Techniken werden verwendet, um die Komponenten der Bewegungsvorhersage bzw. der Datenzuordnung des Verfolgungsproblems zu behandeln \cite{DBLP:journals/corr/BewleyGORU16}.
+
+\vspace*{5mm}
+\begin{lstlisting}[caption={Verwendung des SORT Algorithmus}, label={lst:sort}]
+from sort import *
+mot_tracker = Sort()
+
+# get detections for each frame
+...
+# update SORT each frame
+track_bbs_ids = mot_tracker.update(filtered_detections['detection_boxes'][0])
+
+# track_bbs_ids is a np array where each row contains a valid bounding box and track_id
+...
+\end{lstlisting}
+
+Um den \ac{SORT} Algorithmus zu verwenden, muss die \emph{sort.py} Datei aus dem offiziellen Repository heruntergeladen und anschließend importiert werden \cite{sort_gh}. Für jeden Frame eines Videos, muss zuerst die Objekterkennung ausgeführt, sowie die aus Kapitel \ref{ch:objekterkennung} erhaltenen Objekte gefiltert werden. Die gefilterten Objekte können darauf folgend an den Algorithmus übergeben werden. In dem \gls{Numpy} Array \emph{track\_bbs\_ids} befinden sich Bounding Box Koordinaten, sowie eine zugehörige Track-ID für jedes verfolgte Objekt. Mit Hilfe von Koordinaten und Track-ID kann die Objekterkennung über mehrere Bilder hinweg realisiert werden. Für die Fahrtrichtungserkennung werden die letzten drei X Koordinaten des Mittelpunkts einer Bounding-Box verwendet. Gespeichert werden diese in einem temporären Python Dictionary, wo über die Track-ID auf die Koordinaten zugegriffen werden kann. In diesem Prototypen werden lediglich die X Koordinaten gespeichert, da sich die Objekte nur auf der horizontalen Achse bewegen können.
+
+\vspace*{5mm}
+\begin{lstlisting}[caption={Temporäres Speichern der X Koordinaten eines verfolgten Objekts}, label={lst:tempsave}]
+# add x coordinates of tracked object to track_id
+if track_id in direction_tracking:
+    direction_tracking[track_id].append(x_coord)
+else:
+    direction_tracking[track_id] = [x_coord]
+\end{lstlisting}
+
+In jedem Frame wird abgefragt, ob die Track-ID bereits vorhanden ist und, ob bereits mehr als drei Koordinaten gespeichert wurden. Ist dies der Fall, werden die letzten drei Koordinaten verglichen. 
+
+\vspace*{5mm}
+\begin{lstlisting}[caption={Fahrtrichtungserkennung eines Objektes nach Rechts}, label={lst:directiondetection}]
+if locations[-1] > (locations[-2] and  locations[-3]):
+    directions[track_id] = 'right'
+...
+\end{lstlisting}
+
+Ist die zuletzt erhaltene Koordinate eines Objektes größer als die zwei vorletzten, so wird die Richtung als Rechts gespeichert. Ist die erhaltene Koordinate kleiner als die zwei vorletzten, bewegt sich das Objekt nach links. Auch hier wird die Richtung einer Track-ID in einem temporären Dictionary gespeichert. Bei der Geschwindigkeitsberechnung wird für diesen Prototypen ein Bereich festgelegt, in dem die Bemessung ausgeführt wird. Mit Hilfe dieses Bereichs kann eine Approximation der Geschwindigkeit getroffen werden. Darüber hinaus ist die Schwankung der gemessenen Geschwindigkeit geringer, da nur ein kleiner Bereich gemessen wird. Objekte die zum Stillstand kamen oder durch fehlerhafte Objekterkennung nicht mehr verfolgt werden, sind von der Messung ausgeschlossen. Die Reichweite wurde bei diesem Prototyp auf eine Spanne von ca. 4,5 Metern, in der Mitte des Bildes, eingestellt. 
+
+\newpage
+
+\vspace*{5mm}
+\begin{lstlisting}[caption={Berechnung der Geschwindigkeit}, label={lst:speedmeasurement}]
+# Only objects that will drive completely through the speed detection area will be calculated
+if (locations[-1] >= 452 and min(locations) < 308) or (locations[-1] <= 308 and max(locations) > 452):
+        # get amount of all x coordinates in the speed detection area
+        speed_tracking[track_id] = len([mark for mark in locations if (mark >= 308 and <=452)])
+                                
+        if speed_tracking[track_id] != 0:
+            # speed = 4.5 meters / (amount of x coordinates in area / fps) * 3.6
+            speed = 4.5/(speed_tracking[track_id]/FPS)*3.6
+\end{lstlisting}
+
+Ein Objekt, das je nach Richtung bereits vor dem Bereich als verfolgtes Objekt erkannt wurde und über den gesamten Geschwindigkeitsbereich verfolgt wurde, wird zur Geschwindigkeitsberechnung herangezogen. Anschließend werden die Frames gezählt, wie lange sich das Objekt in dem Bereich befand. Dies wird anhand der Anzahl der X-Koordinaten gemessen, die sich im Bereich befinden. Die Berechnung der Geschwindigkeit erfolgt mit der folgenden Formel:
+
+\begin{equation}
+	\text{Geschwindigkeit in km/h} = \frac{4,5m}{\frac{\text{Anzahl der Frames im Geschwindigkeitsbereich}}{\text{FPS Anzahl des Videos}} * 3,6} 
+\end{equation}
+
+Das bedeutet, dass für die Geschwindigkeitsberechnung eine vollständige Objektverfolgung und damit auch eine Objekterkennung stattfinden muss. Ebenso gilt, je höher die FPS-Zahl des Videos, desto genauer ist die Berechnung.
+
+\section{Visualisierung und Erhebung von Statistiken}
+
+Für die Visualisierung der gemessenen und erkannten Metriken wie Fahrtrichtung und Objekterkennung, muss die Objekterkennung mit den verfolgten Objekten des \ac{SORT} Algorithmus verknüpft werden. Das liegt daran, dass die Rechtecke der Objekterkennung nicht mit den vom Tracking-Algorithmus erhaltenen Rechtecken identisch ist. Der Tracking-Algorithmus verwendet die Daten der Objekterkennung auf Basis der erhaltenen Daten des SORT-Algorithmus, jedoch kann nicht auf das Objekt der Objekterkennung zugegriffen werden. Um das erkannte Ziel der Objekterkennung den richtigen Geschwindigkeits- und Fahrtrichtungswerten zuzuordnen, werden die Daten auf Basis der \glspl{BoundingBox} der Objekterkennung und des Tracking-Algorithmus verknüpft. Dazu wird die Überlappungsfläche aller \glspl{BoundingBox} der Objekterkennung mit denen des Tracking-Algorithmus verglichen. Die Rechtecke mit der größten Fläche werden als das gleiche Objekt betrachtet.
+
+\vspace*{5mm}
+\begin{lstlisting}[caption={Berechnung der Fläche zweier Rechtecke a und b}, label={lst:computation_of_area}]
+dx = min(axmax, bxmax) - max(axmin, bxmin)
+dy = min(aymax, bymax) - max(aymin, bymin)
+
+if (dx>=0) and (dy>=0):
+    return dx*dy
+else:
+    return 0
+\end{lstlisting}
+
+Da nun die Objekte des Tracking-Algorithmus und der Objekterkennung bekannt sind, können die Daten gemeinsam visualisiert und gespeichert werden. Für die Visualisierung eines Rechteckes um das Objekt, wird die \gls{BoundingBox} des \ac{SORT} Algorithmus verwendet, da diese oft genauer und länger vorhanden ist. Die Werte der Objekterkennung, wie Objektklasse und -genauigkeit, werden oberhalb des Rechteckes dargestellt. Die Fahrtrichtung wird anhand eines Pfeils links bzw. rechts des Rechteckes angezeigt. Sobald eine Geschwindigkeit für ein Objekt gemessen wurde, wird diese unterhalb des Objekts angezeigt (siehe Abbildung \ref{fig:visual}).
+
+\begin{figure}[htb]
+	\centering
+	\includegraphics[width=.9\textwidth]{abbildung_final}
+	\caption{Visualisierung der Objekterkennungs- und Trackingdaten}
+	\label{fig:visual}
+\end{figure}
+
+Der Bereich der Geschwindigkeitsmessung wird durch zwei vertikale blaue Linien visualisiert. Befindet sich ein Objekt innerhalb dieses Bereichs, wird das Rechteck des Objekts rot gefärbt. Auf Grund der Anforderungen an Statistiken über das Verkehrsaufkommen, wird sobald die Geschwindigkeit eines Objekts gemessen wurde, die Anzahl der zugehörigen Objektklasse um eins erhöht. Visualisiert wird dies im unteren linken Eck des Videos. 
+
+Um weitere Ableitungen der Statistiken zu ermöglichen, werden die Daten mit Hilfe des Python Moduls \emph{XlsXWriter}\footnote{https://pypi.org/project/XlsxWriter/} gesammelt und am Ende der Programmausführung in einer Excel Datei gespeichert. Die Excel Dateien werden im \emph{statistics}-Ordner abgespeichert. Eine Zuordnung der Dateien wird durch eine Namenskonvention ermöglicht, die Uhrzeit und Datum der Erstellung verwendet. 
+
+\begin{figure}[htb]
+	\centering
+	\includegraphics[width=.6\textwidth]{excelsaving}
+	\caption{Auszug der Beispielstatistiken}
+	\label{fig:excelsaving}
+\end{figure}
+
+Zur Speicherung eines jeden gemessenen Objekts werden \emph{track\_id}, eine interne ID des \ac{SORT} Algorithmus zur Identifikation des eigentlichen Objekts, sowie die Daten der Objekterkennung, die Fahrtrichtung und Geschwindigkeit anzeigen, gesichert. Des weiteren wird eine Summierung der erkannten Klassen gespeichert. Die erhobenen Daten können zu weiteren Ableitungen des Verkehrsaufkommens verwendet werden. 
+
+Bildausschnitte, die die gemessenen Objekte des Prototypen darstellen, werden im \emph{objects}-Ordner abgespeichert (siehe Auflistung \ref{lst:save}). Mit Hilfe der \emph{track\_id} wird eine Identifikation dieser Objekte ermöglicht. Die durch den Prototypen modifizierten Videosequenzen werden im \emph{output\_videos}-Ordner gesichert.
+
+\vspace*{5mm}
+\begin{lstlisting}[caption={Speichern eines Bildausschnittes}, label={lst:save}]
+cv2.imwrite('objects/object_{}.jpg'.format(track_id), movement_frame[y1:y2, x1:x2])
+\end{lstlisting}
 
 
 

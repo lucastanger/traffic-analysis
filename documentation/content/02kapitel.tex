@@ -1,7 +1,7 @@
 %!TEX root = ../dokumentation.tex
 \chapter{Grundlagen und Stand der Forschung}
 
-%https://www-ai.cs.tu-dortmund.de/PublicPublicationFiles/bierwirth_2018a.pdf
+Im folgenden Kapitel wird eine Verständnisgrundlage für die in dieser Arbeit vorkommenden Kapitel definiert. Zunächst wird eine Einführung in die verwendete Entwicklungsumgebung gewährt, mit anschließender Analyse des Forschungsstandes zum Thema Maschinelles Lernen und Optimierungsverfahren. Im Anschluss wird die \ac{ML}-Bibliothek TensorFlow vorgestellt, sowie deren wesentlicher Bestandteil, die Tensoren. Abschließend wird eine Einführung in das Thema Neuronale Netze und deren Spezifikationen gegeben.
 
 \section{Implementierungsumgebung Jupyter}
 \par
@@ -48,16 +48,17 @@ Das Verfahren berechnet den lokalen Gradienten der Fehlerfunktion, entsprechend 
 
 Bei der iterativen Suche eines Minimums ist dabei die Schrittgröße zu beachten. Diese wird durch die zuvor definierte Lernrate ermittelt, die als \gls{Hyperparameter} der Gleichung anzusehen ist. Ist die Lernrate zu klein, steigen die Schritte des Algorithmus, was ihn langsam und ineffizient werden lässt. Eine zu große Lernrate kann hingegen zur Divergenz des Algorithmus führen \cite[114]{Géron2017}.
 
-
 \section{Datenstromorientierte Programmierung mit TensorFlow}
-TensorFlow ist eine Open-Source-Bibliothek für maschinelles Lernen, die von Google seit 2017 angeboten wird. Sie wurde vom Google Brain Team entwickelt und ermöglicht dank vieler \acp{API} Deep-Learning, um Aufgaben effizient zu lösen. Seit Ende 2019 ist TensorFlow 2 mit Keras-Integration verfügbar (siehe Kapitel \ref{sec:keras}). Der Kern von TensorFlow ist in der Programmiersprache C++ implementiert und ermöglicht die Ausführung von Operationen auf unterschiedlichen Hardware-Basen (\acs{CPU}, \ac{GPU} und \ac{TPU}) und Betriebssystemen.  Parallel dazu wurde zur Verbesserung der Ausführungszeiten und der Speicheroptimierung \ac{XLA} entwickelt, ein Compiler, der spezifische mathematische Funktionen für TensorFlow optimiert und diese unabhängig von der Hardware ausführen kann \cite[139\psq]{Deru2019}.
-
-\begin{figure}[ht]
+TensorFlow ist eine Open-Source-Bibliothek für maschinelles Lernen, die von Google seit 2017 angeboten wird. Sie wurde vom Google Brain Team entwickelt und ermöglicht dank vieler \acp{API} Deep-Learning, um Aufgaben effizient zu lösen. Seit Ende 2019 ist TensorFlow 2 mit Keras-Integration verfügbar. 
+Der Kern von TensorFlow ist in der Programmiersprache C++ implementiert und ermöglicht die Ausführung von Operationen auf unterschiedlichen Hardware-Basen (\ac{CPU}, \ac{GPU} und \ac{TPU}) und Betriebssystemen.  Parallel dazu wurde zur Verbesserung der Ausführungszeiten und der Speicheroptimierung \ac{XLA} entwickelt, ein Compiler, der spezifische mathematische Funktionen für TensorFlow optimiert und diese unabhängig von der Hardware ausführen kann \cite[139\psq]{Deru2019}.
+\begin{figure}[htb]
 	\centering
-	\includegraphics[width=\textwidth]{images/TF2-API-Struktur}
+	\includegraphics[height=.2\textwidth]{images/TF2-API-Struktur}
 	\caption[TensorFlow API Struktur]{API-Struktur von TensorFlow 2 (grafisch adaptiert von \cite[140]{Deru2019}\cites{TfAPI})}
 	\label{fig:tfstructure}
 \end{figure}
+
+\newpage
 
 \subsection{Tensoren}
 Grundlegender Bestandteil TensorFlows sind die schon im Namen enthaltenen Tensoren. Sie werden primär zur Datenspeicherung in neuronalen Netzen eingesetzt. Ein Tensor wird in TensorFlow als multidimensionales Array dargestellt. 
@@ -90,7 +91,7 @@ Tensoren werden als unveränderliche Variablen gespeichert, das heißt ein Tenso
 	\label{fig:multitensor}
 \end{figure}
 
-\subsection{Künstliche neuronale Netze}\label{sec:ann}
+\subsection{Artificial Neural Networks}\label{sec:ann}
 
 Die Ursprünge der künstlichen neuronalen Netze lassen sich auf \citeauthor{mcculloch_pitts} im Jahre \citeyear{mcculloch_pitts} zurückführen \cite{mcculloch_pitts}. Eine von Donald O. Hebb 1949 formulierte Lernregel stellt seither in ihrer allgemeinen Form die Grundlage der künstlichen neuronalen Lernverfahren dar \cite{Mainzer1997}. Ein künstliches neuronales Netz besteht aus einer Eingabeschicht von Neuronen, $1..n$ versteckter Schichten und einer letzten Schicht von Ausgangsneuronen. Ein einzelnes Neuron nimmt überlicherweise mehrere Werte $x_{1},...,x_{n}$ und einen \gls{Bias}-Term $w_{0}$ als Eingabe und berechnet daraus die Ausgabe $y=h(z)$.
 
@@ -193,9 +194,7 @@ Weitere sigmoide Aktivierungsfunktionen sind der Arkustangens ($\arctan$) und Ta
 
 \subsection{Convolutional Neural Networks}\label{sec:cnn}
 
-Seitdem \gls{AlexNet} im Jahre 2012 eine Auszeichnung beim jährlichen Wettbewerb der Benchmark-Datenbank ImageNet erzielte \cite{imagenet}, hat sich der Forschungsfokus auf das Themengebiet \emph{Deep Learning} zubewegt \cites{NIPS2012_c399862d, rastegari2016xnornet, russakovsky2015imagenet}. Zuvor waren \acp{SVM} der prävaliernde Ansatz zur Erkennung von Mustern.
-
-\acp{CNN} werden seit 1995 in der digitalen Bildverarbeitung eingesetzt und sind fester Bestandteil des \emph{Deep Learnings}. Es werden Faltmatrizen der Größe 3x3, 5x5, 7x7 bzw. 9x9 eingesetzt, um Bereiche der Eingabematrix sukzessiv zu analysieren. Die dabei verwendeten \emph{convolutional operations} (Faltoperationen) erzeugen rezeptive Felder, die eine Merkmalskarte (\emph{feature map}) des \ac{CNN} generieren \cite{russakovsky2015imagenet}. Die rezeptiven Felder korrespondieren mit einer Region aus dem Originalbild \cite{Yan2020}. 
+Seitdem \gls{AlexNet} im Jahre 2012 eine Auszeichnung beim jährlichen Wettbewerb der Benchmark-Datenbank ImageNet erzielte \cite{imagenet}, hat sich der Forschungsfokus auf das Themengebiet \emph{Deep Learning} zubewegt \cites{NIPS2012_c399862d, rastegari2016xnornet, russakovsky2015imagenet}. Zuvor waren \acp{SVM} der prävaliernde Ansatz zur Erkennung von Mustern. \acp{CNN} werden seit 1995 in der digitalen Bildverarbeitung eingesetzt und sind fester Bestandteil des \emph{Deep Learnings}. Es werden Faltmatrizen der Größe 3x3, 5x5, 7x7 bzw. 9x9 eingesetzt, um Bereiche der Eingabematrix sukzessiv zu analysieren. Die dabei verwendeten \emph{convolutional operations} (Faltoperationen) erzeugen rezeptive Felder, die eine Merkmalskarte (\emph{feature map}) des \ac{CNN} generieren \cite{russakovsky2015imagenet}. Die rezeptiven Felder korrespondieren mit einer Region aus dem Originalbild \cite{Yan2020}. 
 % Begin Figure CNN Matrix
 \usetikzlibrary{matrix,positioning}
 \begin{figure}[htb]
@@ -345,7 +344,7 @@ Algorithmen mit Regionsvorschlägen identifizieren voraussichtliche Objekte in e
 
 Selective Search ist ein Regionsvorschlag-Algorithmus, der bei der Objekterkennung verwendet wird. Er ist so konzipiert, dass er schnell ist und eine sehr hohe Wiedererkennung aufweist. Er basiert auf der Berechnung einer hierarchischen Gruppierung ähnlicher Regionen auf der Grundlage der Kompatibilität von Farbe, Textur, Größe und Form \cites{learnopencv}{UijlingsIJCV2013}. Selective Search beginnt mit einer Übersegmentierung des Bildes auf Basis der Intensität der Pixel unter Verwendung einer graphbasierten Segmentierungsmethode von \citeauthor{felzenszwalb1998ciently} \cite{felzenszwalb1998ciently}. Selective Search nimmt die Übersegmentierungen als initialen Input und iteriert anschließend über die Bildinkremente. 
 
-\begin{figure}
+\begin{figure}[htb]
 	\centering
 	\includegraphics[width=\textwidth]{images/segmentation}
 	\caption[Hierarchischer Segmentierungsprozess]{Hierarchischer Segmentierungsprozess nach \citeauthor{UijlingsIJCV2013}\cites{learnopencv}{UijlingsIJCV2013}}

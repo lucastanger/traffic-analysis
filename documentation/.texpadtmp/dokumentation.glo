@@ -1,5 +1,5 @@
 \glossaryentry{Kernel?\glossentry{Kernel}|setentrycounter[]{page}\glsnumberformat}{2}
-\glossaryentry{Hyperparameter?\glossentry{Hyperparameter}|setentrycounter[]{page}\glsnumberformat}{4}
+\glossaryentry{Hyperparameter?\glossentry{Hyperparameter}|setentrycounter[]{page}\glsnumberformat}{5}
 \glossaryentry{Bias?\glossentry{Bias}|setentrycounter[]{page}\glsnumberformat}{7}
 \glossaryentry{Bias?\glossentry{Bias}|setentrycounter[]{page}\glsnumberformat}{7}
 \glossaryentry{AlexNet?\glossentry{AlexNet}|setentrycounter[]{page}\glsnumberformat}{8}
@@ -8,7 +8,12 @@
 \glossaryentry{Bin?\glossentry{Bin}|setentrycounter[]{page}\glsnumberformat}{12}
 \glossaryentry{Bin?\glossentry{Bin}|setentrycounter[]{page}\glsnumberformat}{12}
 \glossaryentry{Bounding Box?\glossentry{BoundingBox}|setentrycounter[]{page}\glsnumberformat}{13}
-\glossaryentry{Multi-Class Classification?\glossentry{mc_classification}|setentrycounter[]{page}\glsnumberformat}{17}
-\glossaryentry{Multi-Label Classification?\glossentry{ml_classification}|setentrycounter[]{page}\glsnumberformat}{17}
-\glossaryentry{Adam?\glossentry{Adam}|setentrycounter[]{page}\glsnumberformat}{24}
-\glossaryentry{Numpy?\glossentry{Numpy}|setentrycounter[]{page}\glsnumberformat}{39}
+\glossaryentry{Multi-Class Classification?\glossentry{mc_classification}|setentrycounter[]{page}\glsnumberformat}{16}
+\glossaryentry{Multi-Label Classification?\glossentry{ml_classification}|setentrycounter[]{page}\glsnumberformat}{16}
+\glossaryentry{Adam?\glossentry{Adam}|setentrycounter[]{page}\glsnumberformat}{23}
+\glossaryentry{Numpy?\glossentry{Numpy}|setentrycounter[]{page}\glsnumberformat}{40}
+\glossaryentry{Numpy?\glossentry{Numpy}|setentrycounter[]{page}\glsnumberformat}{43}
+\glossaryentry{Bounding Box?\glossentry{BoundingBox}|setentrycounter[]{page}\glsnumberformat}{46}
+\glossaryentry{Bounding Box?\glossentry{BoundingBox}|setentrycounter[]{page}\glsnumberformat}{46}
+\glossaryentry{Bounding Box?\glossentry{BoundingBox}|setentrycounter[]{page}\glsnumberformat}{46}
+\glossaryentry{Multi-Class Classification?\glossentry{mc_classification}|setentrycounter[]{page}\glsnumberformat}{48}

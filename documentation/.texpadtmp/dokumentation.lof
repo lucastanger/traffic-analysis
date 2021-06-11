@@ -11,71 +11,83 @@
 \defcounter {refsection}{0}\relax 
 \addvspace {10\p@ }
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {2.1}{\ignorespaces Gradientenverfahren mit zufälligem Startvektor $\theta _0$ und lokalem Minimum $\hat \theta $\relax }}{5}{figure.caption.18}%
+\contentsline {figure}{\numberline {2.1}{\ignorespaces Gradientenverfahren mit zufälligem Startvektor $\theta _0$ und lokalem Minimum $\hat \theta $\relax }}{5}{figure.caption.19}%
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {2.2}{\ignorespaces TensorFlow API Struktur}}{5}{figure.caption.21}%
+\contentsline {figure}{\numberline {2.2}{\ignorespaces TensorFlow API Struktur}}{5}{figure.caption.23}%
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {2.3}{\ignorespaces Darstellung Skalar, Vektor und Matrix Tensor\relax }}{6}{figure.caption.22}%
+\contentsline {figure}{\numberline {2.3}{\ignorespaces Darstellung Skalar, Vektor und Matrix Tensor\relax }}{6}{figure.caption.24}%
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {2.4}{\ignorespaces Unterschiedliche Darstellung eines 3-Achsen Tensors}}{6}{figure.caption.23}%
+\contentsline {figure}{\numberline {2.4}{\ignorespaces Unterschiedliche Darstellung eines 3-Achsen Tensors}}{6}{figure.caption.25}%
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {2.5}{\ignorespaces Einzelnes Neuron mit dessen Komponenten}}{7}{figure.caption.24}%
+\contentsline {figure}{\numberline {2.5}{\ignorespaces Einzelnes Neuron mit dessen Komponenten}}{7}{figure.caption.26}%
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {2.6}{\ignorespaces Darstellung der Sigmoid Aktivierungsfunktion\relax }}{8}{figure.caption.26}%
+\contentsline {figure}{\numberline {2.6}{\ignorespaces Darstellung der Sigmoid Aktivierungsfunktion\relax }}{8}{figure.caption.28}%
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {2.7}{\ignorespaces Darstellung der ReLU Aktivierungsfunktion\relax }}{8}{figure.caption.27}%
+\contentsline {figure}{\numberline {2.7}{\ignorespaces Darstellung der ReLU Aktivierungsfunktion\relax }}{8}{figure.caption.29}%
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {2.8}{\ignorespaces Erzeugen einer Merkmalskarte durch schrittweise Faltung\relax }}{9}{figure.caption.28}%
+\contentsline {figure}{\numberline {2.8}{\ignorespaces Erzeugen einer Merkmalskarte durch schrittweise Faltung\relax }}{9}{figure.caption.30}%
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {2.9}{\ignorespaces Darstellung des Region Proposal Algorithmus}}{11}{figure.caption.30}%
+\contentsline {figure}{\numberline {2.9}{\ignorespaces Darstellung des Region Proposal Algorithmus}}{11}{figure.caption.32}%
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {2.10}{\ignorespaces Hierarchischer Segmentierungsprozess}}{12}{figure.caption.31}%
-\defcounter {refsection}{0}\relax 
-\addvspace {10\p@ }
+\contentsline {figure}{\numberline {2.10}{\ignorespaces Hierarchischer Segmentierungsprozess}}{12}{figure.caption.33}%
 \defcounter {refsection}{0}\relax 
 \addvspace {10\p@ }
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {4.1}{\ignorespaces Vergleich desselben Bildes nach Randomisierung der Ausrichtung\relax }}{18}{figure.caption.39}%
+\contentsline {figure}{\numberline {3.1}{\ignorespaces Vergleich desselben Bildes nach Randomisierung der Ausrichtung\relax }}{17}{figure.caption.41}%
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {4.2}{\ignorespaces Vergleich desselben Bildes nach Randomisierung der Farbwerte\relax }}{19}{figure.caption.40}%
+\contentsline {figure}{\numberline {3.2}{\ignorespaces Vergleich desselben Bildes nach Randomisierung der Farbwerte\relax }}{18}{figure.caption.42}%
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {4.3}{\ignorespaces Vergleich desselben Bildes nach Randomisierung der Rotation\relax }}{20}{figure.caption.41}%
+\contentsline {figure}{\numberline {3.3}{\ignorespaces Vergleich desselben Bildes nach Randomisierung der Rotation\relax }}{19}{figure.caption.43}%
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {4.4}{\ignorespaces Vergleich desselben Bildes nach Inversion des Farbraums\relax }}{21}{figure.caption.42}%
+\contentsline {figure}{\numberline {3.4}{\ignorespaces Vergleich desselben Bildes nach Inversion des Farbraums\relax }}{20}{figure.caption.44}%
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {4.5}{\ignorespaces Darstellung des Bildtensors nach vollständiger Augmentation\relax }}{22}{figure.caption.43}%
+\contentsline {figure}{\numberline {3.5}{\ignorespaces Darstellung des Bildtensors nach vollständiger Augmentation\relax }}{21}{figure.caption.45}%
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {4.6}{\ignorespaces Architektur des Grundmodells\relax }}{23}{figure.caption.44}%
+\contentsline {figure}{\numberline {3.6}{\ignorespaces Architektur des Grundmodells\relax }}{22}{figure.caption.46}%
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {4.7}{\ignorespaces Verlust- und Genauigkeitskennzahlen des Grundmodells\relax }}{23}{figure.caption.45}%
+\contentsline {figure}{\numberline {3.7}{\ignorespaces Verlust- und Genauigkeitskennzahlen des Grundmodells\relax }}{22}{figure.caption.47}%
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {4.8}{\ignorespaces Entscheidungsfindung \ac {CNN} Architektur\relax }}{25}{figure.caption.46}%
+\contentsline {figure}{\numberline {3.8}{\ignorespaces Entscheidungsfindung \ac {CNN} Architektur\relax }}{24}{figure.caption.48}%
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {4.9}{\ignorespaces Entscheidungsfindung Feature-Map Größe\relax }}{26}{figure.caption.47}%
+\contentsline {figure}{\numberline {3.9}{\ignorespaces Entscheidungsfindung Feature-Map Größe\relax }}{25}{figure.caption.49}%
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {4.10}{\ignorespaces Entscheidungsfindung Fully-Connected Layer Größe\relax }}{27}{figure.caption.48}%
+\contentsline {figure}{\numberline {3.10}{\ignorespaces Entscheidungsfindung Fully-Connected Layer Größe\relax }}{26}{figure.caption.50}%
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {4.11}{\ignorespaces Entscheidungsfindung Dropout Threshold\relax }}{28}{figure.caption.49}%
+\contentsline {figure}{\numberline {3.11}{\ignorespaces Entscheidungsfindung Dropout Threshold\relax }}{27}{figure.caption.51}%
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {4.12}{\ignorespaces Vergleich Initiales und Finales Modell\relax }}{29}{figure.caption.50}%
-\defcounter {refsection}{0}\relax 
-\addvspace {10\p@ }
-\defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {5.1}{\ignorespaces Vorgehen der Hintergrundsubtraktion}}{30}{figure.caption.51}%
-\defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {5.2}{\ignorespaces Gewichtung der Farbkanäle\relax }}{32}{figure.caption.53}%
-\defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {5.3}{\ignorespaces Gauß'sche Unschärfefunktion\relax }}{32}{figure.caption.54}%
-\defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {5.4}{\ignorespaces Grafische Darstellung der zweidimensionalen Gauß-Funktion}}{33}{figure.caption.55}%
-\defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {5.5}{\ignorespaces Erzeugung einer Vordergrundmaske\relax }}{34}{figure.caption.56}%
-\defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {5.6}{\ignorespaces Keypoint Erkennung}}{37}{figure.caption.59}%
-\defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {5.7}{\ignorespaces Modell FLOPs vs COCO Genauigkeit}}{38}{figure.caption.61}%
+\contentsline {figure}{\numberline {3.12}{\ignorespaces Vergleich Initiales und Finales Modell\relax }}{28}{figure.caption.52}%
 \defcounter {refsection}{0}\relax 
 \addvspace {10\p@ }
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {4.1}{\ignorespaces Vorgehen der Hintergrundsubtraktion}}{30}{figure.caption.54}%
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {4.2}{\ignorespaces Graustufen des Bildes\relax }}{31}{figure.caption.55}%
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {4.3}{\ignorespaces Gewichtung der Farbkanäle\relax }}{31}{figure.caption.56}%
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {4.4}{\ignorespaces Weichzeichnen des Bildes\relax }}{32}{figure.caption.57}%
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {4.5}{\ignorespaces Gauß'sche Unschärfefunktion\relax }}{32}{figure.caption.58}%
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {4.6}{\ignorespaces Grafische Darstellung der zweidimensionalen Gauß-Funktion}}{33}{figure.caption.59}%
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {4.7}{\ignorespaces Erzeugung einer Vordergrundmaske\relax }}{34}{figure.caption.60}%
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {4.8}{\ignorespaces Dilation der Vordergrundmaske\relax }}{35}{figure.caption.61}%
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {4.9}{\ignorespaces Gerade Begrenzungsrechtecke auf der Maske\relax }}{36}{figure.caption.62}%
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {4.10}{\ignorespaces Bitweise Operation der Maske und des aktuellen Bildes\relax }}{37}{figure.caption.63}%
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {4.11}{\ignorespaces Keypoint Erkennung}}{38}{figure.caption.66}%
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {4.12}{\ignorespaces Modell FLOPs vs COCO Genauigkeit}}{39}{figure.caption.68}%
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {4.13}{\ignorespaces Performance Benchmark unterschiedlicher Tracking Algorithmen}}{42}{figure.caption.70}%
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {4.14}{\ignorespaces Visualisierung der Objekterkennungs- und Trackingdaten\relax }}{46}{figure.caption.71}%
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {4.15}{\ignorespaces Auszug der Beispielstatistiken\relax }}{47}{figure.caption.72}%
 \defcounter {refsection}{0}\relax 
 \addvspace {10\p@ }
 \defcounter {refsection}{0}\relax 
