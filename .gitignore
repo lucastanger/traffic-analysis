@@ -1,5 +1,6 @@
 # Video Files
-.mov
+*.mov
+*.mp4
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
@@ -133,3 +134,5 @@ dmypy.json
 
 # Visual Studio Code
 .vscode
+
+.DS_Store
