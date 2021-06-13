@@ -356,7 +356,7 @@ Das bedeutet, dass für die Geschwindigkeitsberechnung eine vollständige Objekt
 
 \section{Visualisierung und Erhebung von Statistiken}
 
-Für die Visualisierung der gemessenen und erkannten Metriken wie Fahrtrichtung und Objekterkennung, muss die Objekterkennung mit den verfolgten Objekten des \ac{SORT} Algorithmus verknüpft werden. Das liegt daran, dass die Rechtecke der Objekterkennung nicht mit den vom Tracking-Algorithmus erhaltenen Rechtecken identisch ist. Der Tracking-Algorithmus verwendet die Daten der Objekterkennung auf Basis der erhaltenen Daten des SORT-Algorithmus, jedoch kann nicht auf das Objekt der Objekterkennung zugegriffen werden. Um das erkannte Ziel der Objekterkennung den richtigen Geschwindigkeits- und Fahrtrichtungswerten zuzuordnen, werden die Daten auf Basis der \glspl{BoundingBox} der Objekterkennung und des Tracking-Algorithmus verknüpft. Dazu wird die Überlappungsfläche aller \glspl{BoundingBox} der Objekterkennung mit denen des Tracking-Algorithmus verglichen. Die Rechtecke mit der größten Fläche werden als das gleiche Objekt betrachtet.
+Für die Visualisierung der gemessenen und erkannten Metriken wie Fahrtrichtung und Objekterkennung, muss die Objekterkennung mit den verfolgten Objekten des \ac{SORT} Algorithmus verknüpft werden. Das liegt daran, dass die Rechtecke der Objekterkennung nicht mit den vom Tracking-Algorithmus erhaltenen Rechtecken identisch ist. Der Tracking-Algorithmus verwendet zwar die Objekte der Objekterkennung, jedoch können sie sich nicht gegenseitig identifizieren. Um das erkannte Objekt der Objekterkennung den richtigen Geschwindigkeits- und Fahrtrichtungswerten zuzuordnen, werden die Daten auf Basis der \glspl{BoundingBox} der Objekterkennung und des Tracking-Algorithmus verknüpft. Dazu wird die Überlappungsfläche aller \glspl{BoundingBox} der Objekterkennung mit denen des Tracking-Algorithmus verglichen. Die Rechtecke mit der größten Fläche werden als das gleiche Objekt betrachtet.
 
 \vspace*{5mm}
 \begin{lstlisting}[caption={Berechnung der Fläche zweier Rechtecke a und b}, label={lst:computation_of_area}]
@@ -380,7 +380,7 @@ Da nun die Objekte des Tracking-Algorithmus und der Objekterkennung bekannt sind
 
 Der Bereich der Geschwindigkeitsmessung wird durch zwei vertikale blaue Linien visualisiert. Befindet sich ein Objekt innerhalb dieses Bereichs, wird das Rechteck des Objekts rot gefärbt. Auf Grund der Anforderungen an Statistiken über das Verkehrsaufkommen, wird sobald die Geschwindigkeit eines Objekts gemessen wurde, die Anzahl der zugehörigen Objektklasse um eins erhöht. Visualisiert wird dies im unteren linken Eck des Videos. 
 
-Um weitere Ableitungen der Statistiken zu ermöglichen, werden die Daten mit Hilfe des Python Moduls \emph{XlsXWriter}\footnote{https://pypi.org/project/XlsxWriter/} gesammelt und am Ende der Programmausführung in einer Excel Datei gespeichert. Die Excel Dateien werden im \emph{statistics}-Ordner abgespeichert. Eine Zuordnung der Dateien wird durch eine Namenskonvention ermöglicht, die Uhrzeit und Datum der Erstellung verwendet. 
+Um weitere Ableitungen der Statistiken zu ermöglichen, werden die Daten mit Hilfe des Python Moduls \emph{XlsXWriter}\footnote{https://pypi.org/project/XlsxWriter/} gesammelt und am Ende der Programmausführung in einer Excel Datei gespeichert. Die Excel Dateien werden im \emph{statistics}-Ordner abgespeichert. Eine Zuordnung der Dateien wird durch eine Namenskonvention ermöglicht, die Uhrzeit und Datum der Erstellung verwendet.
 
 \begin{figure}[htb]
 	\centering
@@ -389,7 +389,7 @@ Um weitere Ableitungen der Statistiken zu ermöglichen, werden die Daten mit Hil
 	\label{fig:excelsaving}
 \end{figure}
 
-Zur Speicherung eines jeden gemessenen Objekts werden \emph{track\_id}, eine interne ID des \ac{SORT} Algorithmus zur Identifikation des eigentlichen Objekts, sowie die Daten der Objekterkennung, die Fahrtrichtung und Geschwindigkeit anzeigen, gesichert. Des weiteren wird eine Summierung der erkannten Klassen gespeichert. Die erhobenen Daten können zu weiteren Ableitungen des Verkehrsaufkommens verwendet werden. 
+Zur Speicherung eines jeden gemessenen Objekts werden \emph{track\_id}, eine interne ID des \ac{SORT} Algorithmus zur Identifikation des eigentlichen Objekts, sowie die Daten der Objekterkennung, gesichert. Des weiteren wird eine Summierung der erkannten Klassen in einem separaten Worksheet gespeichert. Die erhobenen Daten können zu weiteren Ableitungen des Verkehrsaufkommens verwendet werden. 
 
 Bildausschnitte, die die gemessenen Objekte des Prototypen darstellen, werden im \emph{objects}-Ordner abgespeichert (siehe Auflistung \ref{lst:save}). Mit Hilfe der \emph{track\_id} wird eine Identifikation dieser Objekte ermöglicht. Die durch den Prototypen modifizierten Videosequenzen werden im \emph{output\_videos}-Ordner gesichert.
 
