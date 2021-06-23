@@ -186,7 +186,7 @@ About
 models/
 data/
 
-*.MOV
+*.mov
 *.mp4
 
 objects/

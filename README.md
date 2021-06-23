@@ -4,7 +4,6 @@
 ![GitHub](https://img.shields.io/github/license/lucastanger/traffic-analysis)
 ![GitHub Repo stars](https://img.shields.io/github/stars/lucastanger/traffic-analysis)
 ![GitHub last commit](https://img.shields.io/github/last-commit/lucastanger/traffic-analysis)
-![GitHub Pipenv locked Python version](https://img.shields.io/github/pipenv/locked/python-version/lucastanger/traffic-analysis)
 ![GitHub issues](https://img.shields.io/github/issues/lucastanger/traffic-analysis)
 ![GitHub code size in bytes](https://img.shields.io/github/languages/code-size/lucastanger/traffic-analysis)
 ![Lines of code](https://img.shields.io/tokei/lines/github/lucastanger/traffic-analysis)
@@ -14,24 +13,18 @@
 
 ## About
 
-## Table of Contents
-
-- [Prerequisites](Prerequisites)
-- [Built With :hammer_and_wrench:](Built)
-- [Authors :busts_in_silhouette:](Authors)
-- [Copyright :copyright:](Copyright)
-- [Citation](Citation)
-- [License](License)
-
-
-# Prerequisites
+Traffic analysis of multiple simultaneous objects with direction detection and speed measurement.
 
 # Built With :hammer_and_wrench:
 
+- [SORT](https://github.com/abewley/sort)
+- [Tensorflow Object Detection API](https://github.com/tensorflow/models/tree/master/research/object_detection)
+- [OpenCV](https://opencv.org/)
+
 # Authors :busts_in_silhouette:
 
--   **Luca Stanger** - TODO - [Student @ DHBW Stuttgart](https://www.dhbw-stuttgart.de/home/)
--   **Florian Drinker** - TODO - [Student @ DHBW Stuttgart](https://www.dhbw-stuttgart.de/home/)
+-   **Luca Stanger** - [Student @ DHBW Stuttgart](https://www.dhbw-stuttgart.de/home/)
+-   **Florian Drinker** - [Student @ DHBW Stuttgart](https://www.dhbw-stuttgart.de/home/)
 
 # Copyright :copyright:
 
@@ -54,4 +47,4 @@ If you find this code useful in your research, please consider citing:
 
 # License :page_facing_up:
 
-This project is licensed under the **MIT License** - see the [LICENSE.MD](https://github.com/lucastanger/traffic-analysis/blob/main/LICENSE) file for details
+This project is licensed under the **GPL-3.0 License** - see the [LICENSE.MD](https://github.com/lucastanger/traffic-analysis/blob/main/LICENSE) file for details
