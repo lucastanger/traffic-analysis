@@ -9,7 +9,7 @@
 ![Lines of code](https://img.shields.io/tokei/lines/github/lucastanger/traffic-analysis)
 [![Gitter](https://badges.gitter.im/gitterHQ/gitter.png)](https://img.shields.io/gitter/room/lucastanger/trafficanalysis)
 
-
+https://user-images.githubusercontent.com/17321535/123069853-807bdb80-d413-11eb-9762-a43236936f3a.mp4
 
 ## About
 
